@@ -1,6 +1,8 @@
 import { test, expect } from "@playwright/test";
 
 const STORAGE_KEY = "rackup-workout-state";
+const PAGE_LOAD_TIME = new Date("2026-08-16T08:00:00");
+const REST_START_TIME = new Date("2026-08-16T09:00:00");
 
 test.describe("RackUp workout", () => {
   test("should show the program title", async ({ page }) => {
@@ -140,8 +142,9 @@ test.describe("RackUp workout", () => {
   test("should count the rest down from the exercise rest duration", async ({
     page,
   }) => {
-    await page.clock.install();
+    await page.clock.install({ time: PAGE_LOAD_TIME });
     await page.goto("/");
+    await page.clock.pauseAt(REST_START_TIME);
     await page
       .getByRole("checkbox", { name: "Barbell Bench Press set 1" })
       .check();
@@ -155,11 +158,14 @@ test.describe("RackUp workout", () => {
   test("should keep the rest running while another day is browsed", async ({
     page,
   }) => {
-    await page.clock.install();
+    await page.clock.install({ time: PAGE_LOAD_TIME });
     await page.goto("/");
+    await page.clock.pauseAt(REST_START_TIME);
     await page
       .getByRole("checkbox", { name: "Barbell Bench Press set 1" })
       .check();
+
+    await expect(page.getByText("3:00")).toBeVisible();
 
     await page.getByRole("button", { name: /Day 4 — Full Body/ }).click();
     await page.clock.runFor("01:00");
@@ -192,9 +198,11 @@ test.describe("RackUp workout", () => {
   });
 
   test("should announce the finish once the rest is over", async ({ page }) => {
-    await page.clock.install();
+    await page.clock.install({ time: PAGE_LOAD_TIME });
     await page.goto("/");
+    await page.clock.pauseAt(REST_START_TIME);
     await page.getByRole("checkbox", { name: "Plank set 1" }).check();
+    await expect(page.getByText("0:45")).toBeVisible();
 
     await page.clock.fastForward("00:46");
 
@@ -204,9 +212,11 @@ test.describe("RackUp workout", () => {
   test("should clear the finished rest timer with nothing to dismiss", async ({
     page,
   }) => {
-    await page.clock.install();
+    await page.clock.install({ time: PAGE_LOAD_TIME });
     await page.goto("/");
+    await page.clock.pauseAt(REST_START_TIME);
     await page.getByRole("checkbox", { name: "Plank set 1" }).check();
+    await expect(page.getByText("0:45")).toBeVisible();
 
     await page.clock.fastForward("00:46");
 
@@ -216,11 +226,13 @@ test.describe("RackUp workout", () => {
   test("should stay accurate while the tab is hidden rather than drifting", async ({
     page,
   }) => {
-    await page.clock.install();
+    await page.clock.install({ time: PAGE_LOAD_TIME });
     await page.goto("/");
+    await page.clock.pauseAt(REST_START_TIME);
     await page
       .getByRole("checkbox", { name: "Barbell Bench Press set 1" })
       .check();
+    await expect(page.getByText("3:00")).toBeVisible();
 
     await page.clock.fastForward("02:00");
 
