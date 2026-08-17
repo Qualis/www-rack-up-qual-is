@@ -1,5 +1,10 @@
 import { IWorkoutStateRepository } from "@/domain/repositories/IWorkoutStateRepository";
-import { DayState, ExerciseOverride, WorkoutState } from "@/interfaces/workout";
+import {
+  DayState,
+  ExerciseOverride,
+  ValueOverride,
+  WorkoutState,
+} from "@/interfaces/workout";
 import { readJson, subscribeToKey, writeJson } from "@/lib/localStorageAccess";
 import { EMPTY_WORKOUT_STATE, WORKOUT_STATE_VERSION } from "@/lib/workoutState";
 
@@ -7,8 +12,14 @@ export const WORKOUT_STATE_STORAGE_KEY = "rackup-workout-state";
 
 const MINIMUM_SUPPORTED_VERSION = 1;
 
+type ValueOverrideRecord = Record<string, unknown> & ValueOverride;
+
 function isRecord(candidate: unknown): candidate is Record<string, unknown> {
   return typeof candidate === "object" && candidate !== null;
+}
+
+function isAdjustedValue(candidate: unknown): boolean {
+  return candidate === null || typeof candidate === "string";
 }
 
 function isCompletedSetIndexes(candidate: unknown): boolean {
@@ -18,21 +29,17 @@ function isCompletedSetIndexes(candidate: unknown): boolean {
   );
 }
 
-function isAdjustedValue(candidate: unknown): boolean {
-  return candidate === null || typeof candidate === "string";
-}
-
-function isExerciseOverride(candidate: unknown): boolean {
+function isValueOverride(candidate: unknown): candidate is ValueOverrideRecord {
   if (!isRecord(candidate)) {
     return false;
   }
 
-  const { reps, weight } = candidate as unknown as ExerciseOverride;
+  const { reps, weight } = candidate as unknown as ValueOverride;
 
   return isAdjustedValue(reps) && isAdjustedValue(weight);
 }
 
-function isDayState(candidate: unknown): boolean {
+function isDayState(candidate: unknown): candidate is DayState {
   if (!isRecord(candidate)) {
     return false;
   }
@@ -48,15 +55,37 @@ function isDayState(candidate: unknown): boolean {
 
 function salvageEntries<T>(
   candidate: unknown,
-  isValidEntry: (entry: unknown) => boolean
+  reviveEntry: (entry: unknown) => T | null
 ): Record<string, T> {
   if (!isRecord(candidate)) {
     return {};
   }
 
   return Object.fromEntries(
-    Object.entries(candidate).filter(([, entry]) => isValidEntry(entry))
-  ) as Record<string, T>;
+    Object.entries(candidate)
+      .map(([key, entry]): [string, T | null] => [key, reviveEntry(entry)])
+      .filter((entry): entry is [string, T] => entry[1] !== null)
+  );
+}
+
+function reviveDayState(candidate: unknown): DayState | null {
+  return isDayState(candidate) ? candidate : null;
+}
+
+function reviveValueOverride(candidate: unknown): ValueOverride | null {
+  return isValueOverride(candidate)
+    ? { reps: candidate.reps, weight: candidate.weight }
+    : null;
+}
+
+function reviveExerciseOverride(candidate: unknown): ExerciseOverride | null {
+  return isValueOverride(candidate)
+    ? {
+        reps: candidate.reps,
+        weight: candidate.weight,
+        sets: salvageEntries(candidate["sets"], reviveValueOverride),
+      }
+    : null;
 }
 
 export function migrateWorkoutState(candidate: unknown): WorkoutState | null {
@@ -72,11 +101,8 @@ export function migrateWorkoutState(candidate: unknown): WorkoutState | null {
 
   return {
     version: WORKOUT_STATE_VERSION,
-    days: salvageEntries<DayState>(candidate["days"], isDayState),
-    exercises: salvageEntries<ExerciseOverride>(
-      candidate["exercises"],
-      isExerciseOverride
-    ),
+    days: salvageEntries(candidate["days"], reviveDayState),
+    exercises: salvageEntries(candidate["exercises"], reviveExerciseOverride),
   };
 }
 

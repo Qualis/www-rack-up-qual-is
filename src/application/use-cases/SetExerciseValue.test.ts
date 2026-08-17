@@ -2,6 +2,7 @@ import { beforeEach, describe, expect, it } from "vitest";
 import { InMemoryWorkoutStateRepository } from "@/infrastructure/repositories/InMemoryWorkoutStateRepository";
 import { overrideOf } from "@/lib/workoutState";
 import { SetExerciseValueUseCase } from "./SetExerciseValue";
+import { SetSetValueUseCase } from "./SetSetValue";
 
 describe("SetExerciseValueUseCase", () => {
   let repository: InMemoryWorkoutStateRepository;
@@ -74,7 +75,11 @@ describe("SetExerciseValueUseCase", () => {
 
     const state = useCase.execute("bench", "weight", "", "40 kg");
 
-    expect(state.exercises["bench"]).toEqual({ reps: "6", weight: null });
+    expect(state.exercises["bench"]).toEqual({
+      reps: "6",
+      weight: null,
+      sets: {},
+    });
   });
 
   it("should leave other exercises untouched", () => {
@@ -102,9 +107,38 @@ describe("SetExerciseValueUseCase", () => {
     expect(overrideOf(repository.load(), "bench").weight).toBe("42.5 kg");
   });
 
+  it("should keep a set's variation when the exercise-wide value is reset", () => {
+    useCase.execute("bench", "weight", "42.5 kg", "40 kg");
+    new SetSetValueUseCase(repository).execute(
+      "bench",
+      1,
+      "weight",
+      "45 kg",
+      "42.5 kg"
+    );
+
+    const state = useCase.execute("bench", "weight", "", "40 kg");
+
+    expect(state.exercises["bench"]?.sets["1"]?.weight).toBe("45 kg");
+  });
+
+  it("should keep a set's variation when the exercise-wide reps are adjusted", () => {
+    new SetSetValueUseCase(repository).execute(
+      "bench",
+      1,
+      "weight",
+      "45 kg",
+      "40 kg"
+    );
+
+    const state = useCase.execute("bench", "reps", "6", "5");
+
+    expect(state.exercises["bench"]?.sets["1"]?.weight).toBe("45 kg");
+  });
+
   it("should leave completed sets untouched when an adjustment is recorded", () => {
     repository.save({
-      version: 2,
+      version: 3,
       days: {
         "1": { lastActiveDate: "2026-08-16", completedSets: { bench: [0] } },
       },

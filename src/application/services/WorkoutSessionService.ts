@@ -7,6 +7,7 @@ import {
 } from "@/interfaces/workout";
 import { GetDayProgressUseCase } from "../use-cases/GetDayProgress";
 import { SetExerciseValueUseCase } from "../use-cases/SetExerciseValue";
+import { SetSetValueUseCase } from "../use-cases/SetSetValue";
 import { ResetDayProgressUseCase } from "../use-cases/ResetDayProgress";
 import { ToggleSetCompletionUseCase } from "../use-cases/ToggleSetCompletion";
 
@@ -15,6 +16,7 @@ export class WorkoutSessionService {
   private readonly toggleSetCompletionUseCase: ToggleSetCompletionUseCase;
   private readonly resetDayProgressUseCase: ResetDayProgressUseCase;
   private readonly setExerciseValueUseCase: SetExerciseValueUseCase;
+  private readonly setSetValueUseCase: SetSetValueUseCase;
 
   constructor(
     private readonly workoutStateRepository: IWorkoutStateRepository
@@ -29,6 +31,7 @@ export class WorkoutSessionService {
     this.setExerciseValueUseCase = new SetExerciseValueUseCase(
       workoutStateRepository
     );
+    this.setSetValueUseCase = new SetSetValueUseCase(workoutStateRepository);
   }
 
   loadState(): WorkoutState {
@@ -76,6 +79,22 @@ export class WorkoutSessionService {
       field,
       value,
       programmeDefault
+    );
+  }
+
+  setSetValue(
+    exerciseKey: string,
+    setIndex: number,
+    field: ExerciseValueField,
+    value: string,
+    exerciseValue: string
+  ): WorkoutState {
+    return this.setSetValueUseCase.execute(
+      exerciseKey,
+      setIndex,
+      field,
+      value,
+      exerciseValue
     );
   }
 }

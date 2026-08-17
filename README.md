@@ -13,8 +13,10 @@ no accounts, no network calls.
   optional fourth day, each day's warm-up block, inline exercise
   illustrations and external demo links
 - One checkbox per set, with per-exercise and per-day progress
-- Reps and weight are adjustable: the programme values are defaults, and
-  anything you change is stored and becomes the default next time
+- Reps and weight are adjustable for a whole exercise or for a single
+  set, so a ramp or a back-off set is expressible; the programme values
+  are defaults, and anything you change is stored and becomes the
+  default next time
 - Checking a set off starts that exercise's rest timer; a new timer
   replaces any running one, so only one is ever active, and it keeps
   running while you browse other days
@@ -42,7 +44,7 @@ One versioned localStorage key, `rackup-workout-state`:
 
 ```json
 {
-  "version": 2,
+  "version": 3,
   "days": {
     "1": {
       "lastActiveDate": "2026-08-16",
@@ -50,10 +52,26 @@ One versioned localStorage key, `rackup-workout-state`:
     }
   },
   "exercises": {
-    "bench": { "reps": null, "weight": "42.5 kg" }
+    "bench": {
+      "reps": null,
+      "weight": "42.5 kg",
+      "sets": { "2": { "reps": null, "weight": "45 kg" } }
+    }
   }
 }
 ```
+
+A value resolves through three tiers, most specific first: the set, then
+the exercise, then the programme. So the example above puts every set of
+the bench press at 42.5 kg except the third, which is 45 kg. Reverting
+targets the tier below — an "Every set" value restores the programme
+value, a set value falls back to the exercise value — and the control
+says which, so the two are never confused.
+
+A set variation is measured against the _exercise_ value, not the
+programme value, so raising the whole lift still moves every set that
+was following it. Variations recorded for a set the programme no longer
+prescribes are kept, not pruned, and simply are not rendered.
 
 Completions are per day, because doing a set belongs to a session.
 Adjustments are per **exercise**, because getting stronger at a lift
@@ -78,7 +96,7 @@ full — the app says so in a banner rather than pretending the set was
 saved. Progress still tracks for the rest of the session; it just will
 not survive a reload.
 
-The running rest timer is deliberately *not* persisted; reloading
+The running rest timer is deliberately _not_ persisted; reloading
 cancels it. Checked sets survive, the countdown does not.
 
 ## Architecture
@@ -230,22 +248,22 @@ This project includes [Claude Code](https://claude.com/claude-code) skills (`.cl
 
 Use these by describing the action to Claude Code (e.g., "scaffold a new feature", "generate tests for this class"):
 
-| Skill | Trigger Phrases |
-|-------|----------------|
+| Skill                                 | Trigger Phrases                                                    |
+| ------------------------------------- | ------------------------------------------------------------------ |
 | **Hexagonal Architecture Scaffolder** | "create a new feature", "scaffold a feature", "add a new use case" |
-| **Test Generator** | "generate tests", "write tests for", "add test coverage" |
-| **Self-Documenting Refactor** | "remove comments", "make code self-documenting" |
-| **Simplify** | "review changed code", "simplify this" |
-| **Keybindings Help** | "customize keyboard shortcuts", "rebind keys" |
-| **Loop** | `/loop 5m /foo` — run a command on a recurring interval |
+| **Test Generator**                    | "generate tests", "write tests for", "add test coverage"           |
+| **Self-Documenting Refactor**         | "remove comments", "make code self-documenting"                    |
+| **Simplify**                          | "review changed code", "simplify this"                             |
+| **Keybindings Help**                  | "customize keyboard shortcuts", "rebind keys"                      |
+| **Loop**                              | `/loop 5m /foo` — run a command on a recurring interval            |
 
 #### Automatically Invoked
 
 These activate based on context without any explicit request:
 
-| Skill | When |
-|-------|------|
-| **Systematic Debugging** | A bug, test failure, or unexpected behavior is encountered |
-| **Test-Driven Development** | Implementing a feature or bugfix |
-| **Verification Before Completion** | About to claim work is complete or create a PR |
-| **Claude API** | Code imports Anthropic SDK or user asks about Claude API |
+| Skill                              | When                                                       |
+| ---------------------------------- | ---------------------------------------------------------- |
+| **Systematic Debugging**           | A bug, test failure, or unexpected behavior is encountered |
+| **Test-Driven Development**        | Implementing a feature or bugfix                           |
+| **Verification Before Completion** | About to claim work is complete or create a PR             |
+| **Claude API**                     | Code imports Anthropic SDK or user asks about Claude API   |

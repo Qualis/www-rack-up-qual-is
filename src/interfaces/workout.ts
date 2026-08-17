@@ -1,15 +1,23 @@
 export type ExerciseValueField = "reps" | "weight";
 
-export interface ExerciseOverride {
+export interface ValueOverride {
   readonly reps: string | null;
   readonly weight: string | null;
 }
 
+export interface ExerciseOverride extends ValueOverride {
+  readonly sets: Readonly<Record<string, ValueOverride>>;
+}
+
+export interface ResolvedValue {
+  readonly value: string;
+  readonly fallback: string;
+  readonly isAdjusted: boolean;
+}
+
 export interface ExercisePrescription {
-  readonly reps: string;
-  readonly weight: string;
-  readonly isRepsAdjusted: boolean;
-  readonly isWeightAdjusted: boolean;
+  readonly reps: ResolvedValue;
+  readonly weight: ResolvedValue;
 }
 
 export interface DayState {

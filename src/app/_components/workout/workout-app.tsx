@@ -14,10 +14,12 @@ import {
 } from "@/lib/programExercises";
 import { deadlineFromNow } from "@/lib/restTimer";
 import {
+  effectiveValuesOf,
   EMPTY_WORKOUT_STATE,
   isSetCompleted,
   overrideOf,
   prescriptionOf,
+  setPrescriptionOf,
 } from "@/lib/workoutState";
 import { RestTimerPanel } from "./rest-timer-panel";
 import { WorkoutDay } from "./workout-day";
@@ -147,24 +149,39 @@ export function WorkoutApp({
 
   const handleSetExerciseValue = (
     exercise: Exercise,
+    setIndex: number | null,
     field: ExerciseValueField,
-    value: string
+    value: string,
+    scopeDescription: string
   ): void => {
-    const nextState = sessionService.setExerciseValue(
-      exercise.key,
-      field,
-      value,
-      field === "reps" ? exercise.reps : exercise.weight
-    );
-    const prescription = prescriptionOf(
-      exercise,
-      overrideOf(nextState, exercise.key)
+    const exerciseValues = effectiveValuesOf(
+      prescriptionOf(exercise, overrideOf(state, exercise.key))
     );
 
+    const nextState =
+      setIndex === null
+        ? sessionService.setExerciseValue(
+            exercise.key,
+            field,
+            value,
+            exercise[field]
+          )
+        : sessionService.setSetValue(
+            exercise.key,
+            setIndex,
+            field,
+            value,
+            exerciseValues[field]
+          );
+
+    const override = overrideOf(nextState, exercise.key);
+    const adjusted =
+      setIndex === null
+        ? effectiveValuesOf(prescriptionOf(exercise, override))
+        : effectiveValuesOf(setPrescriptionOf(exercise, override, setIndex));
+
     setAdjustmentAnnouncement(
-      `${exercise.name} ${field} set to ${
-        field === "reps" ? prescription.reps : prescription.weight
-      }`
+      `${field} for ${scopeDescription} is now ${adjusted[field]}`
     );
   };
 

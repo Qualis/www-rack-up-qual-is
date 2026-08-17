@@ -296,6 +296,76 @@ describe("migrateWorkoutState", () => {
     expect(salvaged?.days).toEqual({});
   });
 
+  it("should give an adjustment recorded before per-set values existed an empty set map", () => {
+    const salvaged = migrateWorkoutState({
+      version: 2,
+      days: {},
+      exercises: { bench: { reps: null, weight: "45 kg" } },
+    });
+
+    expect(salvaged?.exercises["bench"]?.sets).toEqual({});
+  });
+
+  it("should keep a stored set variation when the state is read back", () => {
+    const salvaged = migrateWorkoutState({
+      version: WORKOUT_STATE_VERSION,
+      days: {},
+      exercises: {
+        bench: {
+          reps: null,
+          weight: null,
+          sets: { "1": { reps: null, weight: "45 kg" } },
+        },
+      },
+    });
+
+    expect(salvaged?.exercises["bench"]?.sets["1"]?.weight).toBe("45 kg");
+  });
+
+  it("should keep the sound set variations when one of them is malformed", () => {
+    const salvaged = migrateWorkoutState({
+      version: WORKOUT_STATE_VERSION,
+      days: {},
+      exercises: {
+        bench: {
+          reps: null,
+          weight: null,
+          sets: { "0": { reps: null, weight: "42.5 kg" }, "1": 5 },
+        },
+      },
+    });
+
+    expect(Object.keys(salvaged?.exercises["bench"]?.sets ?? {})).toEqual([
+      "0",
+    ]);
+  });
+
+  it("should treat set variations that are not an object as none", () => {
+    const salvaged = migrateWorkoutState({
+      version: WORKOUT_STATE_VERSION,
+      days: {},
+      exercises: { bench: { reps: null, weight: "45 kg", sets: "nope" } },
+    });
+
+    expect(salvaged?.exercises["bench"]?.sets).toEqual({});
+  });
+
+  it("should keep a variation recorded for a set the programme no longer prescribes", () => {
+    const salvaged = migrateWorkoutState({
+      version: WORKOUT_STATE_VERSION,
+      days: {},
+      exercises: {
+        bench: {
+          reps: null,
+          weight: null,
+          sets: { "9": { reps: null, weight: "45 kg" } },
+        },
+      },
+    });
+
+    expect(salvaged?.exercises["bench"]?.sets["9"]?.weight).toBe("45 kg");
+  });
+
   it("should keep an adjustment that carries only a weight", () => {
     const salvaged = migrateWorkoutState({
       version: WORKOUT_STATE_VERSION,

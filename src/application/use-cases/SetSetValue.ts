@@ -3,30 +3,38 @@ import { ExerciseValueField, WorkoutState } from "@/interfaces/workout";
 import {
   adjustmentFrom,
   overrideOf,
+  setOverrideOf,
   withAdjustedValue,
   withExerciseOverride,
+  withSetOverride,
 } from "@/lib/workoutState";
 
-export class SetExerciseValueUseCase {
+export class SetSetValueUseCase {
   constructor(
     private readonly workoutStateRepository: IWorkoutStateRepository
   ) {}
 
   execute(
     exerciseKey: string,
+    setIndex: number,
     field: ExerciseValueField,
     value: string,
-    programmeDefault: string
+    exerciseValue: string
   ): WorkoutState {
     const state = this.workoutStateRepository.load();
+    const override = overrideOf(state, exerciseKey);
 
     const nextState = withExerciseOverride(
       state,
       exerciseKey,
-      withAdjustedValue(
-        overrideOf(state, exerciseKey),
-        field,
-        adjustmentFrom(value, programmeDefault)
+      withSetOverride(
+        override,
+        setIndex,
+        withAdjustedValue(
+          setOverrideOf(override, setIndex),
+          field,
+          adjustmentFrom(value, exerciseValue)
+        )
       )
     );
 

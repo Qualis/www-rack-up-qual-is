@@ -8,11 +8,11 @@ const renderEditor = (
 ) =>
   render(
     <ExerciseValueEditor
-      exerciseName="Barbell Bench Press"
+      scopeDescription="every set of Barbell Bench Press"
       field="weight"
       label="Weight"
       value="40 kg"
-      programmeDefault="40 kg"
+      fallbackNote="Programme default 40 kg."
       fieldId="day-1-bench-weight"
       otherDaysNote=""
       onCommit={vi.fn()}
@@ -22,7 +22,7 @@ const renderEditor = (
   );
 
 const weightField = () =>
-  screen.getByLabelText(/Weight for Barbell Bench Press/);
+  screen.getByLabelText(/Weight for every set of Barbell Bench Press/);
 
 describe("ExerciseValueEditor", () => {
   it("should commit the typed value when the field loses focus without being submitted", async () => {
@@ -75,11 +75,11 @@ describe("ExerciseValueEditor", () => {
 
     rerender(
       <ExerciseValueEditor
-        exerciseName="Barbell Bench Press"
+        scopeDescription="every set of Barbell Bench Press"
         field="weight"
         label="Weight"
         value="60 kg"
-        programmeDefault="40 kg"
+        fallbackNote="Programme default 40 kg."
         fieldId="day-1-bench-weight"
         otherDaysNote=""
         onCommit={vi.fn()}
@@ -112,6 +112,17 @@ describe("ExerciseValueEditor", () => {
     ).toBeDisabled();
   });
 
+  it("should commit the lowered value when the decrease control is used", async () => {
+    const onCommit = vi.fn();
+    renderEditor({ onCommit });
+
+    await userEvent.click(
+      screen.getByRole("button", { name: /Decrease weight/ })
+    );
+
+    expect(onCommit).toHaveBeenCalledWith("37.5 kg");
+  });
+
   it("should disable stepping down when the reps are already at one", () => {
     renderEditor({ field: "reps", label: "Reps", value: "1" });
 
@@ -125,7 +136,7 @@ describe("ExerciseValueEditor", () => {
 
     expect(
       screen.getByRole("button", {
-        name: "Increase weight for Barbell Bench Press",
+        name: "Increase weight for every set of Barbell Bench Press",
       })
     ).toBeInTheDocument();
   });

@@ -255,7 +255,9 @@ test.describe("RackUp workout", () => {
   }) => {
     await page.goto("/");
     await page
-      .getByRole("button", { name: /change weight for Barbell Bench Press/ })
+      .getByRole("button", {
+        name: /change weight for every set of Barbell Bench Press/,
+      })
       .click();
     await page.getByRole("button", { name: /Increase weight/ }).click();
     await page.getByRole("button", { name: /^Done/ }).click();
@@ -264,7 +266,7 @@ test.describe("RackUp workout", () => {
 
     await expect(
       page.getByRole("button", {
-        name: /change weight for Barbell Bench Press/,
+        name: /change weight for every set of Barbell Bench Press/,
       })
     ).toHaveText(/42.5 kg/);
   });
@@ -274,14 +276,16 @@ test.describe("RackUp workout", () => {
   }) => {
     await page.goto("/");
     await page
-      .getByRole("button", { name: /change weight for Barbell Bench Press/ })
+      .getByRole("button", {
+        name: /change weight for every set of Barbell Bench Press/,
+      })
       .click();
     await page.getByRole("button", { name: /Increase weight/ }).click();
     await page.getByRole("button", { name: /^Done/ }).click();
 
     await expect(
       page.getByRole("button", {
-        name: /reset weight for Barbell Bench Press/i,
+        name: /reset weight for every set of Barbell Bench Press/i,
       })
     ).toHaveText(/was 40 kg/);
   });
@@ -291,18 +295,22 @@ test.describe("RackUp workout", () => {
   }) => {
     await page.goto("/");
     await page
-      .getByRole("button", { name: /change weight for Barbell Bench Press/ })
+      .getByRole("button", {
+        name: /change weight for every set of Barbell Bench Press/,
+      })
       .click();
     await page.getByRole("button", { name: /Increase weight/ }).click();
     await page.getByRole("button", { name: /^Done/ }).click();
 
     await page
-      .getByRole("button", { name: /reset weight for Barbell Bench Press/i })
+      .getByRole("button", {
+        name: /reset weight for every set of Barbell Bench Press/i,
+      })
       .click();
 
     await expect(
       page.getByRole("button", {
-        name: /change weight for Barbell Bench Press/,
+        name: /change weight for every set of Barbell Bench Press/,
       })
     ).toHaveText(/40 kg/);
   });
@@ -313,7 +321,7 @@ test.describe("RackUp workout", () => {
     await page.goto("/");
     await page
       .getByRole("button", {
-        name: /change weight for Standing Neutral-Grip DB Press/,
+        name: /change weight for every set of Standing Neutral-Grip DB Press/,
       })
       .click();
     await page.getByRole("button", { name: /Increase weight/ }).click();
@@ -323,7 +331,7 @@ test.describe("RackUp workout", () => {
 
     await expect(
       page.getByRole("button", {
-        name: /change weight for Standing Neutral-Grip DB Press/,
+        name: /change weight for every set of Standing Neutral-Grip DB Press/,
       })
     ).toHaveText(/12.5 kg ea/);
   });
@@ -358,16 +366,20 @@ test.describe("RackUp workout", () => {
   }) => {
     await page.goto("/");
     await page
-      .getByRole("button", { name: /change weight for Barbell Bench Press/ })
+      .getByRole("button", {
+        name: /change weight for every set of Barbell Bench Press/,
+      })
       .click();
-    await page.getByLabel(/Weight for Barbell Bench Press/).fill("60 kg");
+    await page
+      .getByLabel(/Weight for every set of Barbell Bench Press/)
+      .fill("60 kg");
 
     await page.getByRole("button", { name: /Day 4 — Full Body/ }).click();
     await page.getByRole("button", { name: /Day 1 — Push/ }).click();
 
     await expect(
       page.getByRole("button", {
-        name: /change weight for Barbell Bench Press/,
+        name: /change weight for every set of Barbell Bench Press/,
       })
     ).toHaveText(/60 kg/);
   });
@@ -377,7 +389,9 @@ test.describe("RackUp workout", () => {
   }) => {
     await page.goto("/");
     await page
-      .getByRole("button", { name: /change reps for Barbell Bench Press/ })
+      .getByRole("button", {
+        name: /change reps for every set of Barbell Bench Press/,
+      })
       .click();
 
     const decrease = page.getByRole("button", { name: /Decrease reps/ });
@@ -387,9 +401,9 @@ test.describe("RackUp workout", () => {
       }
     }
 
-    await expect(page.getByLabel(/Reps for Barbell Bench Press/)).toHaveValue(
-      "1"
-    );
+    await expect(
+      page.getByLabel(/Reps for every set of Barbell Bench Press/)
+    ).toHaveValue("1");
   });
 
   test("should return an adjusted weight to where it started after equal steps down and up", async ({
@@ -397,7 +411,9 @@ test.describe("RackUp workout", () => {
   }) => {
     await page.goto("/");
     await page
-      .getByRole("button", { name: /change weight for Barbell Bench Press/ })
+      .getByRole("button", {
+        name: /change weight for every set of Barbell Bench Press/,
+      })
       .click();
 
     await page.getByRole("button", { name: /Decrease weight/ }).click();
@@ -406,9 +422,97 @@ test.describe("RackUp workout", () => {
 
     await expect(
       page.getByRole("button", {
-        name: /change weight for Barbell Bench Press/,
+        name: /change weight for every set of Barbell Bench Press/,
       })
     ).toHaveText(/40 kg/);
+  });
+
+  test("should vary the weight of a single set and keep it after a reload", async ({
+    page,
+  }) => {
+    await page.goto("/");
+    await page
+      .getByRole("button", {
+        name: /change weight for set 2 of Barbell Bench Press/,
+      })
+      .click();
+    await page.getByRole("button", { name: /Increase weight/ }).click();
+    await page.getByRole("button", { name: /^Done/ }).click();
+
+    await page.reload();
+
+    await expect(
+      page.getByRole("button", {
+        name: /change weight for set 2 of Barbell Bench Press/,
+      })
+    ).toHaveText(/42.5 kg/);
+  });
+
+  test("should leave the other sets on the programme weight when one set is varied", async ({
+    page,
+  }) => {
+    await page.goto("/");
+    await page
+      .getByRole("button", {
+        name: /change weight for set 2 of Barbell Bench Press/,
+      })
+      .click();
+    await page.getByRole("button", { name: /Increase weight/ }).click();
+    await page.getByRole("button", { name: /^Done/ }).click();
+
+    await expect(
+      page.getByRole("button", {
+        name: /change weight for set 1 of Barbell Bench Press/,
+      })
+    ).toHaveText(/40 kg/);
+  });
+
+  test("should show a stored adjustment recorded before per-set values existed", async ({
+    page,
+  }) => {
+    await page.addInitScript(() => {
+      window.localStorage.setItem(
+        "rackup-workout-state",
+        JSON.stringify({
+          version: 2,
+          days: {
+            "1": {
+              lastActiveDate: "2026-08-16",
+              completedSets: { bench: [0] },
+            },
+          },
+          exercises: { bench: { reps: null, weight: "45 kg" } },
+        })
+      );
+    });
+
+    await page.goto("/");
+
+    await expect(
+      page.getByRole("button", {
+        name: /change weight for every set of Barbell Bench Press/,
+      })
+    ).toHaveText(/45 kg/);
+    await expect(
+      page.getByRole("checkbox", { name: "Barbell Bench Press set 1" })
+    ).toBeChecked();
+  });
+
+  test("should present each exercise's sets as a table row per set", async ({
+    page,
+  }) => {
+    await page.goto("/");
+
+    const benchTable = page
+      .getByRole("table", { name: /Barbell Bench Press sets/ })
+      .first();
+
+    await expect(
+      benchTable.getByRole("rowheader", { name: "Set 4" })
+    ).toBeVisible();
+    await expect(
+      benchTable.getByRole("rowheader", { name: "Every set" })
+    ).toBeVisible();
   });
 
   test("should report no console errors", async ({ page }) => {

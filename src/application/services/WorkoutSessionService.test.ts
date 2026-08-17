@@ -85,6 +85,20 @@ describe("WorkoutSessionService", () => {
     expect(state.exercises).toEqual({});
   });
 
+  it("should record a varied weight for a single set", () => {
+    const state = service.setSetValue("bench", 1, "weight", "45 kg", "40 kg");
+
+    expect(state.exercises["bench"]?.sets["1"]?.weight).toBe("45 kg");
+  });
+
+  it("should drop a set variation that matches the exercise value", () => {
+    service.setSetValue("bench", 1, "weight", "45 kg", "40 kg");
+
+    const state = service.setSetValue("bench", 1, "weight", "40 kg", "40 kg");
+
+    expect(state.exercises).toEqual({});
+  });
+
   it("should expose whether progress could be persisted", () => {
     expect(service.hasPersistenceFailed()).toBe(false);
   });

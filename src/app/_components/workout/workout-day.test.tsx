@@ -189,7 +189,7 @@ describe("WorkoutDay", () => {
 
     await userEvent.click(
       screen.getByRole("button", {
-        name: /change weight for Barbell Bench Press/,
+        name: /change weight for every set of Barbell Bench Press/,
       })
     );
     await userEvent.click(
@@ -198,8 +198,10 @@ describe("WorkoutDay", () => {
 
     expect(onSetExerciseValue).toHaveBeenCalledWith(
       pushDay.exercises[0],
+      null,
       "weight",
-      "42.5 kg"
+      "42.5 kg",
+      "every set of Barbell Bench Press"
     );
   });
 
@@ -207,13 +209,13 @@ describe("WorkoutDay", () => {
     renderDay({
       state: {
         ...trainedState,
-        exercises: { bench: { reps: null, weight: "42.5 kg" } },
+        exercises: { bench: { reps: null, weight: "42.5 kg", sets: {} } },
       },
     });
 
     expect(
       screen.getByRole("button", {
-        name: /change weight for Barbell Bench Press/,
+        name: /change weight for every set of Barbell Bench Press/,
       })
     ).toHaveTextContent("42.5 kg");
   });

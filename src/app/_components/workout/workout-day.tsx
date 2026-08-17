@@ -7,12 +7,14 @@ import {
   ExerciseValueField,
   WorkoutState,
 } from "@/interfaces/workout";
+import { setIndexesFor } from "@/lib/setCount";
 import {
   completedSetsOf,
   dayStateOf,
   NEVER_TRAINED,
   overrideOf,
   prescriptionOf,
+  setPrescriptionOf,
 } from "@/lib/workoutState";
 import { WorkoutExercise } from "./workout-exercise";
 import { WorkoutWarmUp } from "./workout-warmup";
@@ -27,8 +29,10 @@ type Props = {
   onResetDay: () => void;
   onSetExerciseValue: (
     exercise: Exercise,
+    setIndex: number | null,
     field: ExerciseValueField,
-    value: string
+    value: string,
+    scopeDescription: string
   ) => void;
   otherDaysNoteFor: (exerciseKey: string) => string;
 };
@@ -138,13 +142,26 @@ export function WorkoutDay({
                 exercise,
                 overrideOf(state, exercise.key)
               )}
+              setPrescriptions={setIndexesFor(exercise.sets).map((setIndex) =>
+                setPrescriptionOf(
+                  exercise,
+                  overrideOf(state, exercise.key),
+                  setIndex
+                )
+              )}
               completedSets={completedSetsOf(state, day.day, exercise.key)}
               isResting={restingExerciseKey === exercise.key}
               otherDaysNote={otherDaysNoteFor(exercise.key)}
               onToggleSet={(setIndex) => onToggleSet(exercise, setIndex)}
               onStartRest={() => onStartRest(exercise)}
-              onSetValue={(field, value) =>
-                onSetExerciseValue(exercise, field, value)
+              onSetValue={(setIndex, field, value, scopeDescription) =>
+                onSetExerciseValue(
+                  exercise,
+                  setIndex,
+                  field,
+                  value,
+                  scopeDescription
+                )
               }
             />
           </li>

@@ -485,7 +485,7 @@ describe("WorkoutApp", () => {
 
     fireEvent.click(
       screen.getByRole("button", {
-        name: /change weight for Barbell Bench Press/,
+        name: /change weight for every set of Barbell Bench Press/,
       })
     );
     fireEvent.click(screen.getByRole("button", { name: /Increase weight/ }));
@@ -498,7 +498,7 @@ describe("WorkoutApp", () => {
 
     fireEvent.click(
       screen.getByRole("button", {
-        name: /change weight for Barbell Bench Press/,
+        name: /change weight for every set of Barbell Bench Press/,
       })
     );
     fireEvent.click(screen.getByRole("button", { name: /Increase weight/ }));
@@ -506,7 +506,7 @@ describe("WorkoutApp", () => {
 
     expect(
       screen.getByRole("button", {
-        name: /change weight for Barbell Bench Press/,
+        name: /change weight for every set of Barbell Bench Press/,
       })
     ).toHaveTextContent("42.5 kg");
   });
@@ -516,7 +516,7 @@ describe("WorkoutApp", () => {
 
     fireEvent.click(
       screen.getByRole("button", {
-        name: /change reps for Barbell Bench Press/,
+        name: /change reps for every set of Barbell Bench Press/,
       })
     );
     fireEvent.click(screen.getByRole("button", { name: /Increase reps/ }));
@@ -529,7 +529,7 @@ describe("WorkoutApp", () => {
 
     fireEvent.click(
       screen.getByRole("button", {
-        name: /change weight for Barbell Bench Press/,
+        name: /change weight for every set of Barbell Bench Press/,
       })
     );
 
@@ -540,7 +540,9 @@ describe("WorkoutApp", () => {
     renderApp();
 
     fireEvent.click(
-      screen.getByRole("button", { name: /change weight for Plank/ })
+      screen.getByRole("button", {
+        name: /change weight for every set of Plank/,
+      })
     );
 
     expect(screen.queryByText(/Also applies to/)).not.toBeInTheDocument();
@@ -550,7 +552,7 @@ describe("WorkoutApp", () => {
     renderApp();
     fireEvent.click(
       screen.getByRole("button", {
-        name: /change weight for Barbell Bench Press/,
+        name: /change weight for every set of Barbell Bench Press/,
       })
     );
     fireEvent.click(screen.getByRole("button", { name: /Increase weight/ }));
@@ -559,7 +561,7 @@ describe("WorkoutApp", () => {
 
     expect(
       screen.getByRole("button", {
-        name: /change weight for Barbell Bench Press/,
+        name: /change weight for every set of Barbell Bench Press/,
       })
     ).toHaveTextContent("42.5 kg");
   });
@@ -568,7 +570,7 @@ describe("WorkoutApp", () => {
     renderApp();
     fireEvent.click(
       screen.getByRole("button", {
-        name: /change weight for Barbell Bench Press/,
+        name: /change weight for every set of Barbell Bench Press/,
       })
     );
     fireEvent.click(screen.getByRole("button", { name: /Increase weight/ }));
@@ -583,7 +585,7 @@ describe("WorkoutApp", () => {
     renderApp();
     fireEvent.click(
       screen.getByRole("button", {
-        name: /change weight for Barbell Bench Press/,
+        name: /change weight for every set of Barbell Bench Press/,
       })
     );
     fireEvent.click(screen.getByRole("button", { name: /Increase weight/ }));
@@ -598,21 +600,23 @@ describe("WorkoutApp", () => {
 
     fireEvent.click(
       screen.getByRole("button", {
-        name: /change weight for Barbell Bench Press/,
+        name: /change weight for every set of Barbell Bench Press/,
       })
     );
     fireEvent.click(screen.getByRole("button", { name: /Increase weight/ }));
 
     expect(
       screen.getByRole("status", { name: "Exercise adjustments" })
-    ).toHaveTextContent("Barbell Bench Press weight set to 42.5 kg");
+    ).toHaveTextContent(
+      "weight for every set of Barbell Bench Press is now 42.5 kg"
+    );
   });
 
   it("should announce the restored value when an adjustment is reset", () => {
     renderApp();
     fireEvent.click(
       screen.getByRole("button", {
-        name: /change weight for Barbell Bench Press/,
+        name: /change weight for every set of Barbell Bench Press/,
       })
     );
     fireEvent.click(screen.getByRole("button", { name: /Increase weight/ }));
@@ -622,7 +626,9 @@ describe("WorkoutApp", () => {
 
     expect(
       screen.getByRole("status", { name: "Exercise adjustments" })
-    ).toHaveTextContent("Barbell Bench Press weight set to 40 kg");
+    ).toHaveTextContent(
+      "weight for every set of Barbell Bench Press is now 40 kg"
+    );
   });
 
   it("should announce an adjusted rep count to a screen reader", () => {
@@ -630,14 +636,14 @@ describe("WorkoutApp", () => {
 
     fireEvent.click(
       screen.getByRole("button", {
-        name: /change reps for Barbell Bench Press/,
+        name: /change reps for every set of Barbell Bench Press/,
       })
     );
     fireEvent.click(screen.getByRole("button", { name: /Increase reps/ }));
 
     expect(
       screen.getByRole("status", { name: "Exercise adjustments" })
-    ).toHaveTextContent("Barbell Bench Press reps set to 6");
+    ).toHaveTextContent("reps for every set of Barbell Bench Press is now 6");
   });
 
   it("should keep the adjustment announcement region present before anything happens", () => {
@@ -660,6 +666,127 @@ describe("WorkoutApp", () => {
     expect(screen.getByRole("alert")).toHaveTextContent(
       "your sets and any reps or weight changes will be lost"
     );
+  });
+
+  it("should record a varied weight for a single set", () => {
+    renderApp();
+
+    fireEvent.click(
+      screen.getByRole("button", {
+        name: /change weight for set 2 of Barbell Bench Press/,
+      })
+    );
+    fireEvent.click(screen.getByRole("button", { name: /Increase weight/ }));
+
+    expect(repository.load().exercises["bench"]?.sets["1"]?.weight).toBe(
+      "42.5 kg"
+    );
+  });
+
+  it("should leave the exercise-wide weight alone when a single set is varied", () => {
+    renderApp();
+
+    fireEvent.click(
+      screen.getByRole("button", {
+        name: /change weight for set 2 of Barbell Bench Press/,
+      })
+    );
+    fireEvent.click(screen.getByRole("button", { name: /Increase weight/ }));
+
+    expect(repository.load().exercises["bench"]?.weight).toBeNull();
+  });
+
+  it("should announce which set was varied to a screen reader", () => {
+    renderApp();
+
+    fireEvent.click(
+      screen.getByRole("button", {
+        name: /change weight for set 2 of Barbell Bench Press/,
+      })
+    );
+    fireEvent.click(screen.getByRole("button", { name: /Increase weight/ }));
+
+    expect(
+      screen.getByRole("status", { name: "Exercise adjustments" })
+    ).toHaveTextContent(
+      "weight for set 2 of Barbell Bench Press is now 42.5 kg"
+    );
+  });
+
+  it("should measure a set variation against the exercise value rather than the programme", () => {
+    renderApp();
+    fireEvent.click(
+      screen.getByRole("button", {
+        name: /change weight for every set of Barbell Bench Press/,
+      })
+    );
+    fireEvent.click(screen.getByRole("button", { name: /Increase weight/ }));
+    fireEvent.click(screen.getByRole("button", { name: /^Done/ }));
+
+    fireEvent.click(
+      screen.getByRole("button", {
+        name: /change weight for set 2 of Barbell Bench Press/,
+      })
+    );
+    fireEvent.click(screen.getByRole("button", { name: /Increase weight/ }));
+
+    expect(repository.load().exercises["bench"]?.sets["1"]?.weight).toBe(
+      "45 kg"
+    );
+  });
+
+  it("should keep a varied set weight when the day is reset", () => {
+    renderApp();
+    fireEvent.click(
+      screen.getByRole("button", {
+        name: /change weight for set 2 of Barbell Bench Press/,
+      })
+    );
+    fireEvent.click(screen.getByRole("button", { name: /Increase weight/ }));
+    fireEvent.click(screen.getByRole("button", { name: /^Done/ }));
+
+    fireEvent.click(screen.getByRole("button", { name: "Reset day" }));
+    fireEvent.click(screen.getByRole("button", { name: "Confirm reset" }));
+
+    expect(repository.load().exercises["bench"]?.sets["1"]?.weight).toBe(
+      "42.5 kg"
+    );
+  });
+
+  it("should keep a varied set weight when a set is checked off", () => {
+    renderApp();
+    fireEvent.click(
+      screen.getByRole("button", {
+        name: /change weight for set 2 of Barbell Bench Press/,
+      })
+    );
+    fireEvent.click(screen.getByRole("button", { name: /Increase weight/ }));
+    fireEvent.click(screen.getByRole("button", { name: /^Done/ }));
+
+    checkOffFirstSet();
+
+    expect(repository.load().exercises["bench"]?.sets["1"]?.weight).toBe(
+      "42.5 kg"
+    );
+  });
+
+  it("should carry a varied set weight across to the other day sharing the exercise", () => {
+    renderApp();
+    fireEvent.click(
+      screen.getByRole("button", {
+        name: /change weight for set 2 of Barbell Bench Press/,
+      })
+    );
+    fireEvent.click(screen.getByRole("button", { name: /Increase weight/ }));
+    fireEvent.click(screen.getByRole("button", { name: /^Done/ }));
+
+    fireEvent.click(screen.getByRole("button", { name: /Day 4 — Full Body/ }));
+
+    expect(
+      screen.getByRole("button", {
+        name: /change weight for set 2 of Barbell Bench Press/,
+      })
+    ).toHaveTextContent("42.5 kg");
   });
 
   it("should start with no stored progress when nothing has been saved", () => {

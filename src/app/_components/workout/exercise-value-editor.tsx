@@ -5,11 +5,11 @@ import { ExerciseValueField } from "@/interfaces/workout";
 import { canStepValue, STEP_BY_FIELD, stepValue } from "@/lib/exerciseValue";
 
 type Props = {
-  exerciseName: string;
+  scopeDescription: string;
   field: ExerciseValueField;
   label: string;
   value: string;
-  programmeDefault: string;
+  fallbackNote: string;
   fieldId: string;
   otherDaysNote: string;
   onCommit: (value: string) => void;
@@ -17,11 +17,11 @@ type Props = {
 };
 
 export function ExerciseValueEditor({
-  exerciseName,
+  scopeDescription,
   field,
   label,
   value,
-  programmeDefault,
+  fallbackNote,
   fieldId,
   otherDaysNote,
   onCommit,
@@ -60,7 +60,7 @@ export function ExerciseValueEditor({
         className="min-w-0 rounded border border-primary/20 p-2 focus:outline-none"
       >
         <legend className="sr-only">
-          {label} for {exerciseName}
+          {label} for {scopeDescription}
         </legend>
 
         <div className="flex flex-wrap items-center gap-2">
@@ -72,12 +72,12 @@ export function ExerciseValueEditor({
           >
             <span aria-hidden="true">−</span>
             <span className="sr-only">
-              Decrease {field} for {exerciseName}
+              Decrease {field} for {scopeDescription}
             </span>
           </button>
 
           <label htmlFor={fieldId} className="sr-only">
-            {label} for {exerciseName}
+            {label} for {scopeDescription}
           </label>
           <input
             id={fieldId}
@@ -97,7 +97,7 @@ export function ExerciseValueEditor({
           >
             <span aria-hidden="true">+</span>
             <span className="sr-only">
-              Increase {field} for {exerciseName}
+              Increase {field} for {scopeDescription}
             </span>
           </button>
 
@@ -108,7 +108,7 @@ export function ExerciseValueEditor({
             Done
             <span className="sr-only">
               {" "}
-              editing {field} for {exerciseName}
+              editing {field} for {scopeDescription}
             </span>
           </button>
         </div>
@@ -117,7 +117,7 @@ export function ExerciseValueEditor({
           id={describedById}
           className="mt-2 text-xs text-accent-3/60 dark:text-accent-1/60"
         >
-          Programme default {programmeDefault}. {otherDaysNote}
+          {fallbackNote} {otherDaysNote}
         </p>
       </fieldset>
     </form>

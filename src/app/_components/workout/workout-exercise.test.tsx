@@ -2,6 +2,15 @@ import { describe, expect, it, vi } from "vitest";
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { Exercise } from "@/interfaces/program";
+import { ExerciseOverride } from "@/interfaces/workout";
+import { setIndexesFor } from "@/lib/setCount";
+import {
+  NO_OVERRIDE,
+  prescriptionOf,
+  setPrescriptionOf,
+  withAdjustedValue,
+  withSetOverride,
+} from "@/lib/workoutState";
 import { WorkoutExercise } from "./workout-exercise";
 
 const bench: Exercise = {
@@ -17,28 +26,55 @@ const bench: Exercise = {
   illustrationSvg: "<svg></svg>",
 };
 
-const renderExercise = (
-  overrides: Partial<Parameters<typeof WorkoutExercise>[0]> = {}
-) =>
-  render(
+type RenderOptions = {
+  exercise?: Exercise;
+  override?: ExerciseOverride;
+  completedSets?: readonly number[];
+  isResting?: boolean;
+  otherDaysNote?: string;
+  onToggleSet?: (setIndex: number) => void;
+  onStartRest?: () => void;
+  onSetValue?: (
+    setIndex: number | null,
+    field: "reps" | "weight",
+    value: string,
+    scopeDescription: string
+  ) => void;
+};
+
+const renderExercise = (options: RenderOptions = {}) => {
+  const exercise = options.exercise ?? bench;
+  const override = options.override ?? NO_OVERRIDE;
+
+  return render(
     <WorkoutExercise
-      exercise={bench}
+      exercise={exercise}
       dayNumber={1}
-      prescription={{
-        reps: bench.reps,
-        weight: bench.weight,
-        isRepsAdjusted: false,
-        isWeightAdjusted: false,
-      }}
-      completedSets={[]}
-      isResting={false}
-      otherDaysNote=""
-      onToggleSet={vi.fn()}
-      onStartRest={vi.fn()}
-      onSetValue={vi.fn()}
-      {...overrides}
+      prescription={prescriptionOf(exercise, override)}
+      setPrescriptions={setIndexesFor(exercise.sets).map((setIndex) =>
+        setPrescriptionOf(exercise, override, setIndex)
+      )}
+      completedSets={options.completedSets ?? []}
+      isResting={options.isResting ?? false}
+      otherDaysNote={options.otherDaysNote ?? ""}
+      onToggleSet={options.onToggleSet ?? vi.fn()}
+      onStartRest={options.onStartRest ?? vi.fn()}
+      onSetValue={options.onSetValue ?? vi.fn()}
     />
   );
+};
+
+const everySetWeight = () =>
+  screen.getByRole("button", {
+    name: /change weight for every set of Barbell Bench Press/,
+  });
+
+const setWeight = (setNumber: number) =>
+  screen.getByRole("button", {
+    name: new RegExp(
+      `change weight for set ${setNumber} of Barbell Bench Press`
+    ),
+  });
 
 describe("WorkoutExercise", () => {
   it("should name the exercise", () => {
@@ -63,36 +99,24 @@ describe("WorkoutExercise", () => {
     expect(screen.getByText("4")).toBeInTheDocument();
   });
 
-  it("should show the prescribed reps", () => {
-    renderExercise();
-
-    expect(
-      screen.getByRole("button", {
-        name: /change reps for Barbell Bench Press/,
-      })
-    ).toHaveTextContent("5");
-  });
-
-  it("should show the prescribed weight", () => {
-    renderExercise();
-
-    expect(
-      screen.getByRole("button", {
-        name: /change weight for Barbell Bench Press/,
-      })
-    ).toHaveTextContent("40 kg");
-  });
-
-  it("should render one checkbox per prescribed set", () => {
+  it("should render one row per prescribed set", () => {
     renderExercise();
 
     expect(screen.getAllByRole("checkbox")).toHaveLength(4);
   });
 
-  it("should render no checkboxes when the exercise has no countable sets", () => {
+  it("should render no set rows when the exercise has no countable sets", () => {
     renderExercise({ exercise: { ...bench, sets: "—" } });
 
     expect(screen.queryAllByRole("checkbox")).toHaveLength(0);
+  });
+
+  it("should label each set row with its number for assistive technology", () => {
+    renderExercise();
+
+    expect(
+      screen.getByRole("rowheader", { name: "Set 3" })
+    ).toBeInTheDocument();
   });
 
   it("should show a set as checked when it has been completed", () => {
@@ -101,14 +125,6 @@ describe("WorkoutExercise", () => {
     expect(
       screen.getByRole("checkbox", { name: "Barbell Bench Press set 2" })
     ).toBeChecked();
-  });
-
-  it("should show a set as unchecked when it has not been completed", () => {
-    renderExercise({ completedSets: [1] });
-
-    expect(
-      screen.getByRole("checkbox", { name: "Barbell Bench Press set 1" })
-    ).not.toBeChecked();
   });
 
   it("should report which set was checked off", async () => {
@@ -131,6 +147,245 @@ describe("WorkoutExercise", () => {
     expect(onStartRest).toHaveBeenCalledTimes(1);
   });
 
+  it("should link to the external demo", () => {
+    renderExercise();
+
+    expect(
+      screen.getByRole("link", { name: /Barbell Bench Press/ })
+    ).toHaveAttribute("href", bench.demoUrl);
+  });
+
+  it("should show the programme weight for every set when nothing is adjusted", () => {
+    renderExercise();
+
+    expect(everySetWeight()).toHaveTextContent("40 kg");
+  });
+
+  it("should show the exercise weight on a set that has not been varied", () => {
+    renderExercise({
+      override: withAdjustedValue(NO_OVERRIDE, "weight", "42.5 kg"),
+    });
+
+    expect(setWeight(2)).toHaveTextContent("42.5 kg");
+  });
+
+  it("should show a set's own weight when that set has been varied", () => {
+    renderExercise({
+      override: withSetOverride(NO_OVERRIDE, 1, {
+        reps: null,
+        weight: "45 kg",
+      }),
+    });
+
+    expect(setWeight(2)).toHaveTextContent("45 kg");
+  });
+
+  it("should leave the other sets on the exercise value when one set is varied", () => {
+    renderExercise({
+      override: withSetOverride(NO_OVERRIDE, 1, {
+        reps: null,
+        weight: "45 kg",
+      }),
+    });
+
+    expect(setWeight(1)).toHaveTextContent("40 kg");
+  });
+
+  it("should offer no clear control on a set that has not been varied", () => {
+    renderExercise({
+      override: withAdjustedValue(NO_OVERRIDE, "weight", "42.5 kg"),
+    });
+
+    expect(
+      screen.queryByRole("button", { name: /clear weight for set 2/ })
+    ).not.toBeInTheDocument();
+  });
+
+  it("should offer what the exercise prescribes as the way back on a varied set", () => {
+    renderExercise({
+      override: withSetOverride(
+        withAdjustedValue(NO_OVERRIDE, "weight", "42.5 kg"),
+        1,
+        { reps: null, weight: "45 kg" }
+      ),
+    });
+
+    expect(
+      screen.getByRole("button", { name: /clear weight for set 2/ })
+    ).toHaveTextContent("use 42.5 kg");
+  });
+
+  it("should offer the programme value as the way back on the every-set row", () => {
+    renderExercise({
+      override: withAdjustedValue(NO_OVERRIDE, "weight", "42.5 kg"),
+    });
+
+    expect(
+      screen.getByRole("button", { name: /reset weight for every set/ })
+    ).toHaveTextContent("was 40 kg");
+  });
+
+  it("should clear a set's variation when its way-back control is used", async () => {
+    const onSetValue = vi.fn();
+    renderExercise({
+      onSetValue,
+      override: withSetOverride(NO_OVERRIDE, 1, {
+        reps: null,
+        weight: "45 kg",
+      }),
+    });
+
+    await userEvent.click(
+      screen.getByRole("button", { name: /clear weight for set 2/ })
+    );
+
+    expect(onSetValue).toHaveBeenCalledWith(
+      1,
+      "weight",
+      "",
+      "set 2 of Barbell Bench Press"
+    );
+  });
+
+  it("should reset the exercise when the every-set way-back control is used", async () => {
+    const onSetValue = vi.fn();
+    renderExercise({
+      onSetValue,
+      override: withAdjustedValue(NO_OVERRIDE, "weight", "42.5 kg"),
+    });
+
+    await userEvent.click(
+      screen.getByRole("button", { name: /reset weight for every set/ })
+    );
+
+    expect(onSetValue).toHaveBeenCalledWith(
+      null,
+      "weight",
+      "",
+      "every set of Barbell Bench Press"
+    );
+  });
+
+  it("should open an editor scoped to the set that was tapped", async () => {
+    renderExercise();
+
+    await userEvent.click(setWeight(2));
+
+    expect(
+      screen.getByLabelText(/Weight for set 2 of Barbell Bench Press/)
+    ).toHaveValue("40 kg");
+  });
+
+  it("should open only the tapped set's editor when several sets are shown", async () => {
+    renderExercise();
+
+    await userEvent.click(setWeight(2));
+
+    expect(screen.getAllByRole("textbox")).toHaveLength(1);
+  });
+
+  it("should report which set was varied when a set's weight is changed", async () => {
+    const onSetValue = vi.fn();
+    renderExercise({ onSetValue });
+
+    await userEvent.click(setWeight(2));
+    await userEvent.click(
+      screen.getByRole("button", { name: /Increase weight/ })
+    );
+
+    expect(onSetValue).toHaveBeenCalledWith(
+      1,
+      "weight",
+      "42.5 kg",
+      "set 2 of Barbell Bench Press"
+    );
+  });
+
+  it("should report the exercise scope when the every-set weight is changed", async () => {
+    const onSetValue = vi.fn();
+    renderExercise({ onSetValue });
+
+    await userEvent.click(everySetWeight());
+    await userEvent.click(
+      screen.getByRole("button", { name: /Increase weight/ })
+    );
+
+    expect(onSetValue).toHaveBeenCalledWith(
+      null,
+      "weight",
+      "42.5 kg",
+      "every set of Barbell Bench Press"
+    );
+  });
+
+  it("should step the reps up by one when the increase control is used", async () => {
+    const onSetValue = vi.fn();
+    renderExercise({ onSetValue });
+
+    await userEvent.click(
+      screen.getByRole("button", {
+        name: /change reps for every set of Barbell Bench Press/,
+      })
+    );
+    await userEvent.click(
+      screen.getByRole("button", { name: /Increase reps/ })
+    );
+
+    expect(onSetValue).toHaveBeenCalledWith(
+      null,
+      "reps",
+      "6",
+      "every set of Barbell Bench Press"
+    );
+  });
+
+  it("should tell the user what a set falls back to inside its editor", async () => {
+    renderExercise({
+      override: withAdjustedValue(NO_OVERRIDE, "weight", "42.5 kg"),
+    });
+
+    await userEvent.click(setWeight(2));
+
+    expect(screen.getByText(/Every set is 42.5 kg/)).toBeInTheDocument();
+  });
+
+  it("should show the programme default inside the every-set editor", async () => {
+    renderExercise();
+
+    await userEvent.click(everySetWeight());
+
+    expect(screen.getByText(/Programme default 40 kg/)).toBeInTheDocument();
+  });
+
+  it("should tell the user which other days an adjustment reaches", async () => {
+    renderExercise({ otherDaysNote: "Also applies to Day 4" });
+
+    await userEvent.click(setWeight(2));
+
+    expect(screen.getByText(/Also applies to Day 4/)).toBeInTheDocument();
+  });
+
+  it("should return focus to the set value it was opened from when the editor closes", async () => {
+    renderExercise();
+
+    await userEvent.click(setWeight(2));
+    await userEvent.click(screen.getByRole("button", { name: /^Done/ }));
+
+    expect(setWeight(2)).toHaveFocus();
+  });
+
+  it("should give every value control a thumb-sized target", () => {
+    renderExercise();
+
+    expect(everySetWeight()).toHaveClass("min-h-[44px]");
+  });
+
+  it("should keep the tappable affordance visible in dark mode", () => {
+    renderExercise();
+
+    expect(everySetWeight()).toHaveClass("dark:border-primary-dark");
+  });
+
   it("should highlight the exercise while its rest timer is running", () => {
     const { container } = renderExercise({ isResting: true });
 
@@ -145,332 +400,13 @@ describe("WorkoutExercise", () => {
     );
   });
 
-  it("should link to the external demo", () => {
-    renderExercise();
-
-    expect(
-      screen.getByRole("link", { name: /Barbell Bench Press/ })
-    ).toHaveAttribute("href", bench.demoUrl);
-  });
-
-  it("should offer no reset control while the value matches the programme", () => {
-    renderExercise();
-
-    expect(
-      screen.queryByRole("button", { name: /reset weight/i })
-    ).not.toBeInTheDocument();
-  });
-
-  it("should show the adjusted weight when one has been recorded", () => {
-    renderExercise({
-      prescription: {
-        reps: "5",
-        weight: "42.5 kg",
-        isRepsAdjusted: false,
-        isWeightAdjusted: true,
-      },
-    });
-
-    expect(
-      screen.getByRole("button", {
-        name: /change weight for Barbell Bench Press/,
-      })
-    ).toHaveTextContent("42.5 kg");
-  });
-
-  it("should show what the programme prescribed when a weight has been adjusted", () => {
-    renderExercise({
-      prescription: {
-        reps: "5",
-        weight: "42.5 kg",
-        isRepsAdjusted: false,
-        isWeightAdjusted: true,
-      },
-    });
-
-    expect(
-      screen.getByRole("button", { name: /reset weight/i })
-    ).toHaveTextContent("was 40 kg");
-  });
-
-  it("should restore the programme default when the reset control is used", async () => {
-    const onSetValue = vi.fn();
-    renderExercise({
-      onSetValue,
-      prescription: {
-        reps: "5",
-        weight: "42.5 kg",
-        isRepsAdjusted: false,
-        isWeightAdjusted: true,
-      },
-    });
-
-    await userEvent.click(
-      screen.getByRole("button", { name: /reset weight/i })
-    );
-
-    expect(onSetValue).toHaveBeenCalledWith("weight", "");
-  });
-
-  it("should open an editor when the weight is tapped", async () => {
-    renderExercise();
-
-    await userEvent.click(
-      screen.getByRole("button", {
-        name: /change weight for Barbell Bench Press/,
-      })
-    );
-
-    expect(screen.getByLabelText(/Weight for Barbell Bench Press/)).toHaveValue(
-      "40 kg"
-    );
-  });
-
-  it("should open an editor seeded with the adjusted value", async () => {
-    renderExercise({
-      prescription: {
-        reps: "5",
-        weight: "42.5 kg",
-        isRepsAdjusted: false,
-        isWeightAdjusted: true,
-      },
-    });
-
-    await userEvent.click(
-      screen.getByRole("button", {
-        name: /change weight for Barbell Bench Press/,
-      })
-    );
-
-    expect(screen.getByLabelText(/Weight for Barbell Bench Press/)).toHaveValue(
-      "42.5 kg"
-    );
-  });
-
-  it("should submit the typed weight when the editor is finished", async () => {
-    const onSetValue = vi.fn();
-    renderExercise({ onSetValue });
-
-    await userEvent.click(
-      screen.getByRole("button", {
-        name: /change weight for Barbell Bench Press/,
-      })
-    );
-    await userEvent.clear(
-      screen.getByLabelText(/Weight for Barbell Bench Press/)
-    );
-    await userEvent.type(
-      screen.getByLabelText(/Weight for Barbell Bench Press/),
-      "45 kg"
-    );
-    await userEvent.click(screen.getByRole("button", { name: /^Done/ }));
-
-    expect(onSetValue).toHaveBeenLastCalledWith("weight", "45 kg");
-  });
-
-  it("should close the editor once it is finished", async () => {
-    renderExercise();
-
-    await userEvent.click(
-      screen.getByRole("button", {
-        name: /change weight for Barbell Bench Press/,
-      })
-    );
-    await userEvent.click(screen.getByRole("button", { name: /^Done/ }));
-
-    expect(screen.queryByLabelText("weight")).not.toBeInTheDocument();
-  });
-
-  it("should step the weight up by a plate when the increase control is used", async () => {
-    const onSetValue = vi.fn();
-    renderExercise({ onSetValue });
-
-    await userEvent.click(
-      screen.getByRole("button", {
-        name: /change weight for Barbell Bench Press/,
-      })
-    );
-    await userEvent.click(
-      screen.getByRole("button", { name: /Increase weight/ })
-    );
-
-    expect(onSetValue).toHaveBeenCalledWith("weight", "42.5 kg");
-  });
-
-  it("should step the reps up by one when the increase control is used", async () => {
-    const onSetValue = vi.fn();
-    renderExercise({ onSetValue });
-
-    await userEvent.click(
-      screen.getByRole("button", {
-        name: /change reps for Barbell Bench Press/,
-      })
-    );
-    await userEvent.click(
-      screen.getByRole("button", { name: /Increase reps/ })
-    );
-
-    expect(onSetValue).toHaveBeenCalledWith("reps", "6");
-  });
-
-  it("should step the weight down when the decrease control is used", async () => {
-    const onSetValue = vi.fn();
-    renderExercise({ onSetValue });
-
-    await userEvent.click(
-      screen.getByRole("button", {
-        name: /change weight for Barbell Bench Press/,
-      })
-    );
-    await userEvent.click(
-      screen.getByRole("button", { name: /Decrease weight/ })
-    );
-
-    expect(onSetValue).toHaveBeenCalledWith("weight", "37.5 kg");
-  });
-
-  it("should disable the steppers when the weight has no leading number", async () => {
-    renderExercise({
-      exercise: { ...bench, weight: "Body wt" },
-      prescription: {
-        reps: "5",
-        weight: "Body wt",
-        isRepsAdjusted: false,
-        isWeightAdjusted: false,
-      },
-    });
-
-    await userEvent.click(
-      screen.getByRole("button", {
-        name: /change weight for Barbell Bench Press/,
-      })
-    );
-
-    expect(
-      screen.getByRole("button", { name: /Increase weight/ })
-    ).toBeDisabled();
-  });
-
-  it("should tell the user which other days an adjustment reaches", async () => {
-    renderExercise({ otherDaysNote: "Also applies to Day 4" });
-
-    await userEvent.click(
-      screen.getByRole("button", {
-        name: /change weight for Barbell Bench Press/,
-      })
-    );
-
-    expect(screen.getByText(/Also applies to Day 4/)).toBeInTheDocument();
-  });
-
-  it("should show the programme default inside the editor", async () => {
-    renderExercise();
-
-    await userEvent.click(
-      screen.getByRole("button", {
-        name: /change weight for Barbell Bench Press/,
-      })
-    );
-
-    expect(screen.getByText(/Programme default 40 kg/)).toBeInTheDocument();
-  });
-
-  it("should keep the definition list free of elements it may not contain while editing", async () => {
+  it("should keep the definition list to the values that are not per set", () => {
     const { container } = renderExercise();
-
-    await userEvent.click(
-      screen.getByRole("button", {
-        name: /change weight for Barbell Bench Press/,
-      })
-    );
-
-    expect(
-      Array.from(container.querySelector("dl")?.children ?? []).map(
-        (child) => child.tagName
-      )
-    ).toEqual(["DIV", "DIV", "DIV", "DIV"]);
-  });
-
-  it("should keep every value labelled by its term while one is being edited", async () => {
-    const { container } = renderExercise();
-
-    await userEvent.click(
-      screen.getByRole("button", {
-        name: /change weight for Barbell Bench Press/,
-      })
-    );
 
     expect(
       Array.from(container.querySelectorAll("dt")).map(
         (term) => term.textContent
       )
-    ).toEqual(["Sets", "Reps", "Weight", "Rest"]);
-  });
-
-  it("should return focus to the value it was opened from when the editor closes", async () => {
-    renderExercise();
-
-    await userEvent.click(
-      screen.getByRole("button", {
-        name: /change weight for Barbell Bench Press/,
-      })
-    );
-    await userEvent.click(screen.getByRole("button", { name: /^Done/ }));
-
-    expect(
-      screen.getByRole("button", {
-        name: /change weight for Barbell Bench Press/,
-      })
-    ).toHaveFocus();
-  });
-
-  it("should give the value control a thumb-sized target", () => {
-    renderExercise();
-
-    expect(
-      screen.getByRole("button", {
-        name: /change weight for Barbell Bench Press/,
-      })
-    ).toHaveClass("min-h-[44px]");
-  });
-
-  it("should give the reset control a thumb-sized target, since it destroys an adjustment", () => {
-    renderExercise({
-      prescription: {
-        reps: "5",
-        weight: "42.5 kg",
-        isRepsAdjusted: false,
-        isWeightAdjusted: true,
-      },
-    });
-
-    expect(screen.getByRole("button", { name: /reset weight/i })).toHaveClass(
-      "min-h-[44px]"
-    );
-  });
-
-  it("should keep the tappable affordance visible in dark mode", () => {
-    renderExercise();
-
-    expect(
-      screen.getByRole("button", {
-        name: /change weight for Barbell Bench Press/,
-      })
-    ).toHaveClass("dark:border-primary-dark");
-  });
-
-  it("should start the reset control's accessible name with its visible text", () => {
-    renderExercise({
-      prescription: {
-        reps: "5",
-        weight: "42.5 kg",
-        isRepsAdjusted: false,
-        isWeightAdjusted: true,
-      },
-    });
-
-    expect(
-      screen.getByRole("button", { name: /reset weight/i }).textContent
-    ).toMatch(/^was 40 kg/);
+    ).toEqual(["Sets", "Rest"]);
   });
 });
