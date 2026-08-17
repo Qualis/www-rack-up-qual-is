@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+NODE_ENV=production npm run build &&
+version=$(node -p "require('./package.json').version") &&
+
+mkdir -p dist &&
+tar -czf "dist/www-rack-up-qual-is-${version}.tar.gz" .next public &&
+
+packer build -color=false -var "artifact=www-rack-up-qual-is-${version}.tar.gz" -var "version=${version}" infrastructure/packer/service.pkr.hcl &&
+
+echo "VERSION=$version"

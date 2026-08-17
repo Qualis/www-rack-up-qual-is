@@ -1,0 +1,21 @@
+# Ignore artifacts
+.next
+node_modules
+public
+.vercel
+out
+
+# Ignore package files
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Ignore build output
+dist
+build
+
+# Ignore coverage output
+coverage
+
+# Ignore specific Next.js files
+next-env.d.ts

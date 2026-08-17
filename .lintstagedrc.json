@@ -1,0 +1,4 @@
+{
+  "*.{ts,tsx,js,jsx}": ["prettier --write", "vitest related --run"],
+  "*.{json,css,md}": ["prettier --write"]
+}

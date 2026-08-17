@@ -1,0 +1,14 @@
+{
+  "background_color": "#ffffff",
+  "display": "standalone",
+  "icons": [
+    {
+      "sizes": "192x192",
+      "src": "/favicon/favicon-192x192.png",
+      "type": "image/png"
+    }
+  ],
+  "name": "RackUp",
+  "short_name": "RackUp",
+  "theme_color": "#ffffff"
+}

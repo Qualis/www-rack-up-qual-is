@@ -1,0 +1,534 @@
+{
+  "title": "Home Strength Program",
+  "split": "Push / Pull / Legs (+ optional Full Body)",
+  "source": "MuscleWiki demo links",
+  "units": "kg",
+  "legend": {
+    "you": "#1f2a3a",
+    "weights": "#c0392b",
+    "band": "#e08a1e",
+    "bench": "#8a94a3"
+  },
+  "notes": {
+    "structure": "Three sessions a week — Push, Pull, Legs — on non-consecutive days (e.g. Mon/Wed/Fri). Day 4 (Full Body) is an optional extra for a 4th session.",
+    "warmup": "Do the warm-up block, then ramp up the first heavy lift; the second main lift gets 1–2 feeler sets, accessories none.",
+    "progression": "Add a little weight or one rep when the top of the rep range feels easy; keep pressing pain-free.",
+    "rest": "~2–3 min on heavy lifts, 60–90 s on accessories, less on core.",
+    "shoulderAndBack": "Goblet squat and dumbbell RDL are the back/shoulder-sparing options; keep bench, overhead press, back squat and barbell RDL moderate and pain-free. Not medical advice — clear with a physio."
+  },
+  "schedule": [
+    {
+      "day": "Monday",
+      "session": "Day 1 — Push",
+      "type": "train"
+    },
+    {
+      "day": "Tuesday",
+      "session": "Rest",
+      "type": "rest"
+    },
+    {
+      "day": "Wednesday",
+      "session": "Day 2 — Pull",
+      "type": "train"
+    },
+    {
+      "day": "Thursday",
+      "session": "Rest",
+      "type": "rest"
+    },
+    {
+      "day": "Friday",
+      "session": "Day 3 — Legs",
+      "type": "train"
+    },
+    {
+      "day": "Saturday",
+      "session": "Rest (or optional Day 4 — Full Body)",
+      "type": "rest"
+    },
+    {
+      "day": "Sunday",
+      "session": "Rest",
+      "type": "rest"
+    }
+  ],
+  "days": [
+    {
+      "day": 1,
+      "name": "Push",
+      "focus": "Chest · shoulders · triceps",
+      "optional": false,
+      "estimatedMinutes": 50,
+      "warmup": {
+        "guidance": "Do these in order — high knees to raise your heart rate, then the drills to prime the pattern. Ramp up your first heavy lift — e.g. empty bar ×8, ~60% ×5, ~80% ×3, ~90% ×1–2, then your working sets. The day’s second main lift gets 1–2 light feeler sets; accessories need none.",
+        "exercises": [
+          {
+            "key": "highknees",
+            "name": "High Knees",
+            "cue": "Jog on the spot, drive knees up",
+            "sets": "—",
+            "reps": "2–3 min",
+            "demoUrl": "https://musclewiki.com/exercise/cardio-knee-taps",
+            "illustrationSvg": "<svg viewBox=\"0 0 150 132\" width=\"92\" height=\"80\"><line x1=\"8\" y1=\"120\" x2=\"142\" y2=\"120\" stroke=\"#c4ccd6\" stroke-width=\"3\" stroke-linecap=\"round\"/><line x1=\"78\" y1=\"118\" x2=\"78\" y2=\"96\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><line x1=\"78\" y1=\"96\" x2=\"76\" y2=\"74\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><line x1=\"76\" y1=\"74\" x2=\"62\" y2=\"72\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><line x1=\"62\" y1=\"72\" x2=\"64\" y2=\"86\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><line x1=\"76\" y1=\"74\" x2=\"76\" y2=\"50\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><circle cx=\"76\" cy=\"42\" r=\"7\" fill=\"#1f2a3a\"/><polyline points=\"76,54 66,56 66,48\" fill=\"none\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><polyline points=\"76,54 86,58 86,66\" fill=\"none\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>"
+          },
+          {
+            "key": "bandpull",
+            "name": "Band Pull-Apart",
+            "cue": "Arms straight, pull to chest",
+            "sets": "2",
+            "reps": "15",
+            "demoUrl": "https://musclewiki.com/exercise/band-pull-apart",
+            "illustrationSvg": "<svg viewBox=\"0 0 150 132\" width=\"92\" height=\"80\"><line x1=\"8\" y1=\"120\" x2=\"142\" y2=\"120\" stroke=\"#c4ccd6\" stroke-width=\"3\" stroke-linecap=\"round\"/><line x1=\"66\" y1=\"120\" x2=\"72\" y2=\"86\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><line x1=\"78\" y1=\"120\" x2=\"72\" y2=\"86\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><line x1=\"72\" y1=\"86\" x2=\"72\" y2=\"52\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><circle cx=\"72\" cy=\"42\" r=\"7\" fill=\"#1f2a3a\"/><line x1=\"72\" y1=\"58\" x2=\"50\" y2=\"58\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><line x1=\"72\" y1=\"58\" x2=\"94\" y2=\"58\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><path d=\"M 50 58 L 94 58\" fill=\"none\" stroke=\"#e08a1e\" stroke-width=\"3\" stroke-dasharray=\"1.5 3.5\" stroke-linecap=\"round\"/></svg>"
+          },
+          {
+            "key": "armcircle",
+            "name": "Arm Circles",
+            "cue": "Small-to-big, both directions",
+            "sets": "2",
+            "reps": "20 ea",
+            "demoUrl": "https://musclewiki.com/exercise/forward-arm-circle",
+            "illustrationSvg": "<svg viewBox=\"0 0 150 132\" width=\"92\" height=\"80\"><line x1=\"8\" y1=\"120\" x2=\"142\" y2=\"120\" stroke=\"#c4ccd6\" stroke-width=\"3\" stroke-linecap=\"round\"/><line x1=\"66\" y1=\"120\" x2=\"72\" y2=\"86\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><line x1=\"78\" y1=\"120\" x2=\"72\" y2=\"86\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><line x1=\"72\" y1=\"86\" x2=\"72\" y2=\"54\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><circle cx=\"72\" cy=\"44\" r=\"7\" fill=\"#1f2a3a\"/><line x1=\"72\" y1=\"58\" x2=\"98\" y2=\"52\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><path d=\"M 104 46 a 9 9 0 1 0 8 4\" fill=\"none\" stroke=\"#1f2a3a\" stroke-width=\"2\"/><line x1=\"112\" y1=\"50\" x2=\"108\" y2=\"49\" stroke=\"#1f2a3a\" stroke-width=\"2\" stroke-linecap=\"round\"/><line x1=\"112\" y1=\"50\" x2=\"111\" y2=\"55\" stroke=\"#1f2a3a\" stroke-width=\"2\" stroke-linecap=\"round\"/></svg>"
+          },
+          {
+            "key": "pushup",
+            "name": "Push-Up",
+            "cue": "Body in a line, full range",
+            "sets": "2",
+            "reps": "8",
+            "demoUrl": "https://musclewiki.com/exercise/push-up",
+            "illustrationSvg": "<svg viewBox=\"0 0 150 132\" width=\"92\" height=\"80\"><line x1=\"8\" y1=\"120\" x2=\"142\" y2=\"120\" stroke=\"#c4ccd6\" stroke-width=\"3\" stroke-linecap=\"round\"/><line x1=\"54\" y1=\"120\" x2=\"54\" y2=\"102\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><circle cx=\"48\" cy=\"100\" r=\"7\" fill=\"#1f2a3a\"/><polyline points=\"54,102 88,110 116,118\" fill=\"none\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>"
+          }
+        ]
+      },
+      "exercises": [
+        {
+          "key": "bench",
+          "name": "Barbell Bench Press",
+          "cue": "Lower to chest, press up & slightly back",
+          "sets": "4",
+          "reps": "5",
+          "restSeconds": 180,
+          "restLabel": "3 min",
+          "weight": "40 kg",
+          "demoUrl": "https://musclewiki.com/exercise/barbell-bench-press",
+          "illustrationSvg": "<svg viewBox=\"0 0 312 142\" width=\"150\" height=\"68\"><g transform=\"translate(0,0)\"><line x1=\"8\" y1=\"120\" x2=\"142\" y2=\"120\" stroke=\"#c4ccd6\" stroke-width=\"3\" stroke-linecap=\"round\"/><rect x=\"48\" y=\"86\" width=\"58\" height=\"7\" rx=\"2\" fill=\"#8a94a3\"/><line x1=\"54\" y1=\"93\" x2=\"54\" y2=\"107\" stroke=\"#8a94a3\" stroke-width=\"3\"/><line x1=\"100\" y1=\"93\" x2=\"100\" y2=\"107\" stroke=\"#8a94a3\" stroke-width=\"3\"/><line x1=\"54\" y1=\"86\" x2=\"100\" y2=\"86\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><circle cx=\"104\" cy=\"82\" r=\"7\" fill=\"#1f2a3a\"/><line x1=\"70\" y1=\"86\" x2=\"74\" y2=\"60\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><line x1=\"84\" y1=\"86\" x2=\"80\" y2=\"60\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><circle cx=\"77\" cy=\"57\" r=\"7\" fill=\"#c0392b\"/><circle cx=\"77\" cy=\"57\" r=\"2.4\" fill=\"#7a1f16\"/></g><g transform=\"translate(162,0)\"><line x1=\"8\" y1=\"120\" x2=\"142\" y2=\"120\" stroke=\"#c4ccd6\" stroke-width=\"3\" stroke-linecap=\"round\"/><rect x=\"48\" y=\"86\" width=\"58\" height=\"7\" rx=\"2\" fill=\"#8a94a3\"/><line x1=\"54\" y1=\"93\" x2=\"54\" y2=\"107\" stroke=\"#8a94a3\" stroke-width=\"3\"/><line x1=\"100\" y1=\"93\" x2=\"100\" y2=\"107\" stroke=\"#8a94a3\" stroke-width=\"3\"/><line x1=\"54\" y1=\"86\" x2=\"100\" y2=\"86\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><circle cx=\"104\" cy=\"82\" r=\"7\" fill=\"#1f2a3a\"/><line x1=\"70\" y1=\"86\" x2=\"74\" y2=\"73\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><line x1=\"84\" y1=\"86\" x2=\"80\" y2=\"73\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><circle cx=\"77\" cy=\"71\" r=\"7\" fill=\"#c0392b\"/><circle cx=\"77\" cy=\"71\" r=\"2.4\" fill=\"#7a1f16\"/></g><line x1=\"146\" y1=\"64\" x2=\"164\" y2=\"64\" stroke=\"#c0392b\" stroke-width=\"3.6\" stroke-linecap=\"round\"/><line x1=\"164\" y1=\"64\" x2=\"158\" y2=\"60\" stroke=\"#c0392b\" stroke-width=\"3.6\" stroke-linecap=\"round\"/><line x1=\"164\" y1=\"64\" x2=\"158\" y2=\"68\" stroke=\"#c0392b\" stroke-width=\"3.6\" stroke-linecap=\"round\"/><text x=\"75\" y=\"137\" text-anchor=\"middle\" font-size=\"9\" fill=\"#9aa4b2\" font-family=\"Arial\">START</text><text x=\"237\" y=\"137\" text-anchor=\"middle\" font-size=\"9\" fill=\"#9aa4b2\" font-family=\"Arial\">END</text></svg>"
+        },
+        {
+          "key": "dbpress",
+          "name": "Standing Neutral-Grip DB Press",
+          "cue": "Palms facing in, press overhead",
+          "sets": "3",
+          "reps": "8",
+          "restSeconds": 120,
+          "restLabel": "2 min",
+          "weight": "10 kg ea",
+          "demoUrl": "https://musclewiki.com/exercise/dumbbell-neutral-overhead-press",
+          "illustrationSvg": "<svg viewBox=\"0 0 312 142\" width=\"150\" height=\"68\"><g transform=\"translate(0,0)\"><line x1=\"8\" y1=\"120\" x2=\"142\" y2=\"120\" stroke=\"#c4ccd6\" stroke-width=\"3\" stroke-linecap=\"round\"/><line x1=\"66\" y1=\"120\" x2=\"72\" y2=\"88\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><line x1=\"78\" y1=\"120\" x2=\"72\" y2=\"88\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><line x1=\"72\" y1=\"88\" x2=\"72\" y2=\"56\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><circle cx=\"72\" cy=\"46\" r=\"7\" fill=\"#1f2a3a\"/><line x1=\"72\" y1=\"58\" x2=\"64\" y2=\"58\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><circle cx=\"62\" cy=\"53\" r=\"4.4\" fill=\"#c0392b\"/><circle cx=\"62\" cy=\"63\" r=\"4.4\" fill=\"#c0392b\"/><line x1=\"62\" y1=\"53\" x2=\"62\" y2=\"63\" stroke=\"#c0392b\" stroke-width=\"3\"/><line x1=\"72\" y1=\"58\" x2=\"80\" y2=\"58\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><circle cx=\"82\" cy=\"53\" r=\"4.4\" fill=\"#c0392b\"/><circle cx=\"82\" cy=\"63\" r=\"4.4\" fill=\"#c0392b\"/><line x1=\"82\" y1=\"53\" x2=\"82\" y2=\"63\" stroke=\"#c0392b\" stroke-width=\"3\"/></g><g transform=\"translate(162,0)\"><line x1=\"8\" y1=\"120\" x2=\"142\" y2=\"120\" stroke=\"#c4ccd6\" stroke-width=\"3\" stroke-linecap=\"round\"/><line x1=\"66\" y1=\"120\" x2=\"72\" y2=\"88\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><line x1=\"78\" y1=\"120\" x2=\"72\" y2=\"88\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><line x1=\"72\" y1=\"88\" x2=\"72\" y2=\"56\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><circle cx=\"72\" cy=\"46\" r=\"7\" fill=\"#1f2a3a\"/><line x1=\"72\" y1=\"58\" x2=\"66\" y2=\"44\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><circle cx=\"64\" cy=\"35\" r=\"4.4\" fill=\"#c0392b\"/><circle cx=\"64\" cy=\"45\" r=\"4.4\" fill=\"#c0392b\"/><line x1=\"64\" y1=\"35\" x2=\"64\" y2=\"45\" stroke=\"#c0392b\" stroke-width=\"3\"/><line x1=\"72\" y1=\"58\" x2=\"78\" y2=\"44\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><circle cx=\"80\" cy=\"35\" r=\"4.4\" fill=\"#c0392b\"/><circle cx=\"80\" cy=\"45\" r=\"4.4\" fill=\"#c0392b\"/><line x1=\"80\" y1=\"35\" x2=\"80\" y2=\"45\" stroke=\"#c0392b\" stroke-width=\"3\"/></g><line x1=\"146\" y1=\"64\" x2=\"164\" y2=\"64\" stroke=\"#c0392b\" stroke-width=\"3.6\" stroke-linecap=\"round\"/><line x1=\"164\" y1=\"64\" x2=\"158\" y2=\"60\" stroke=\"#c0392b\" stroke-width=\"3.6\" stroke-linecap=\"round\"/><line x1=\"164\" y1=\"64\" x2=\"158\" y2=\"68\" stroke=\"#c0392b\" stroke-width=\"3.6\" stroke-linecap=\"round\"/><text x=\"75\" y=\"137\" text-anchor=\"middle\" font-size=\"9\" fill=\"#9aa4b2\" font-family=\"Arial\">START</text><text x=\"237\" y=\"137\" text-anchor=\"middle\" font-size=\"9\" fill=\"#9aa4b2\" font-family=\"Arial\">END</text></svg>"
+        },
+        {
+          "key": "incline",
+          "name": "Dumbbell Incline Press",
+          "cue": "Reclined bench, press dumbbells up",
+          "sets": "3",
+          "reps": "8",
+          "restSeconds": 120,
+          "restLabel": "2 min",
+          "weight": "15 kg ea",
+          "demoUrl": "https://musclewiki.com/exercise/dumbbell-incline-bench-press",
+          "illustrationSvg": "<svg viewBox=\"0 0 312 142\" width=\"150\" height=\"68\"><g transform=\"translate(0,0)\"><line x1=\"8\" y1=\"120\" x2=\"142\" y2=\"120\" stroke=\"#c4ccd6\" stroke-width=\"3\" stroke-linecap=\"round\"/><path d=\"M 44 116 L 96 78\" stroke=\"#8a94a3\" stroke-width=\"8\" stroke-linecap=\"round\"/><line x1=\"54\" y1=\"110\" x2=\"96\" y2=\"80\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><circle cx=\"100\" cy=\"76\" r=\"7\" fill=\"#1f2a3a\"/><line x1=\"82\" y1=\"84\" x2=\"82\" y2=\"94\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><circle cx=\"82\" cy=\"93\" r=\"4.4\" fill=\"#c0392b\"/><circle cx=\"82\" cy=\"103\" r=\"4.4\" fill=\"#c0392b\"/><line x1=\"82\" y1=\"93\" x2=\"82\" y2=\"103\" stroke=\"#c0392b\" stroke-width=\"3\"/><line x1=\"90\" y1=\"80\" x2=\"90\" y2=\"90\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><circle cx=\"90\" cy=\"89\" r=\"4.4\" fill=\"#c0392b\"/><circle cx=\"90\" cy=\"99\" r=\"4.4\" fill=\"#c0392b\"/><line x1=\"90\" y1=\"89\" x2=\"90\" y2=\"99\" stroke=\"#c0392b\" stroke-width=\"3\"/></g><g transform=\"translate(162,0)\"><line x1=\"8\" y1=\"120\" x2=\"142\" y2=\"120\" stroke=\"#c4ccd6\" stroke-width=\"3\" stroke-linecap=\"round\"/><path d=\"M 44 116 L 96 78\" stroke=\"#8a94a3\" stroke-width=\"8\" stroke-linecap=\"round\"/><line x1=\"54\" y1=\"110\" x2=\"96\" y2=\"80\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><circle cx=\"100\" cy=\"76\" r=\"7\" fill=\"#1f2a3a\"/><line x1=\"82\" y1=\"84\" x2=\"82\" y2=\"70\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><circle cx=\"82\" cy=\"61\" r=\"4.4\" fill=\"#c0392b\"/><circle cx=\"82\" cy=\"71\" r=\"4.4\" fill=\"#c0392b\"/><line x1=\"82\" y1=\"61\" x2=\"82\" y2=\"71\" stroke=\"#c0392b\" stroke-width=\"3\"/><line x1=\"90\" y1=\"80\" x2=\"90\" y2=\"68\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><circle cx=\"90\" cy=\"59\" r=\"4.4\" fill=\"#c0392b\"/><circle cx=\"90\" cy=\"69\" r=\"4.4\" fill=\"#c0392b\"/><line x1=\"90\" y1=\"59\" x2=\"90\" y2=\"69\" stroke=\"#c0392b\" stroke-width=\"3\"/></g><line x1=\"146\" y1=\"64\" x2=\"164\" y2=\"64\" stroke=\"#c0392b\" stroke-width=\"3.6\" stroke-linecap=\"round\"/><line x1=\"164\" y1=\"64\" x2=\"158\" y2=\"60\" stroke=\"#c0392b\" stroke-width=\"3.6\" stroke-linecap=\"round\"/><line x1=\"164\" y1=\"64\" x2=\"158\" y2=\"68\" stroke=\"#c0392b\" stroke-width=\"3.6\" stroke-linecap=\"round\"/><text x=\"75\" y=\"137\" text-anchor=\"middle\" font-size=\"9\" fill=\"#9aa4b2\" font-family=\"Arial\">START</text><text x=\"237\" y=\"137\" text-anchor=\"middle\" font-size=\"9\" fill=\"#9aa4b2\" font-family=\"Arial\">END</text></svg>"
+        },
+        {
+          "key": "skull",
+          "name": "EZ-Bar Skull Crusher",
+          "cue": "Lower bar to forehead, extend elbows",
+          "sets": "3",
+          "reps": "10",
+          "restSeconds": 60,
+          "restLabel": "60 s",
+          "weight": "20 kg",
+          "demoUrl": "https://musclewiki.com/exercise/barbell-skullcrusher",
+          "illustrationSvg": "<svg viewBox=\"0 0 312 142\" width=\"150\" height=\"68\"><g transform=\"translate(0,0)\"><line x1=\"8\" y1=\"120\" x2=\"142\" y2=\"120\" stroke=\"#c4ccd6\" stroke-width=\"3\" stroke-linecap=\"round\"/><rect x=\"46\" y=\"88\" width=\"60\" height=\"7\" rx=\"2\" fill=\"#8a94a3\"/><line x1=\"52\" y1=\"95\" x2=\"52\" y2=\"109\" stroke=\"#8a94a3\" stroke-width=\"3\"/><line x1=\"100\" y1=\"95\" x2=\"100\" y2=\"109\" stroke=\"#8a94a3\" stroke-width=\"3\"/><line x1=\"52\" y1=\"88\" x2=\"100\" y2=\"88\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><circle cx=\"104\" cy=\"84\" r=\"7\" fill=\"#1f2a3a\"/><line x1=\"86\" y1=\"88\" x2=\"86\" y2=\"68\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><line x1=\"86\" y1=\"68\" x2=\"86\" y2=\"56\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><circle cx=\"86\" cy=\"54\" r=\"7\" fill=\"#c0392b\"/><circle cx=\"86\" cy=\"54\" r=\"2.4\" fill=\"#7a1f16\"/></g><g transform=\"translate(162,0)\"><line x1=\"8\" y1=\"120\" x2=\"142\" y2=\"120\" stroke=\"#c4ccd6\" stroke-width=\"3\" stroke-linecap=\"round\"/><rect x=\"46\" y=\"88\" width=\"60\" height=\"7\" rx=\"2\" fill=\"#8a94a3\"/><line x1=\"52\" y1=\"95\" x2=\"52\" y2=\"109\" stroke=\"#8a94a3\" stroke-width=\"3\"/><line x1=\"100\" y1=\"95\" x2=\"100\" y2=\"109\" stroke=\"#8a94a3\" stroke-width=\"3\"/><line x1=\"52\" y1=\"88\" x2=\"100\" y2=\"88\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><circle cx=\"104\" cy=\"84\" r=\"7\" fill=\"#1f2a3a\"/><line x1=\"86\" y1=\"88\" x2=\"86\" y2=\"68\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><line x1=\"86\" y1=\"68\" x2=\"98\" y2=\"70\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><circle cx=\"101\" cy=\"69\" r=\"7\" fill=\"#c0392b\"/><circle cx=\"101\" cy=\"69\" r=\"2.4\" fill=\"#7a1f16\"/></g><line x1=\"146\" y1=\"64\" x2=\"164\" y2=\"64\" stroke=\"#c0392b\" stroke-width=\"3.6\" stroke-linecap=\"round\"/><line x1=\"164\" y1=\"64\" x2=\"158\" y2=\"60\" stroke=\"#c0392b\" stroke-width=\"3.6\" stroke-linecap=\"round\"/><line x1=\"164\" y1=\"64\" x2=\"158\" y2=\"68\" stroke=\"#c0392b\" stroke-width=\"3.6\" stroke-linecap=\"round\"/><text x=\"75\" y=\"137\" text-anchor=\"middle\" font-size=\"9\" fill=\"#9aa4b2\" font-family=\"Arial\">START</text><text x=\"237\" y=\"137\" text-anchor=\"middle\" font-size=\"9\" fill=\"#9aa4b2\" font-family=\"Arial\">END</text></svg>"
+        },
+        {
+          "key": "plank",
+          "name": "Plank",
+          "cue": "Straight line head to heels, brace hard",
+          "sets": "3",
+          "reps": "30–45 s",
+          "restSeconds": 45,
+          "restLabel": "45 s",
+          "weight": "Body wt",
+          "demoUrl": "https://musclewiki.com/exercise/forearm-plank",
+          "illustrationSvg": "<svg viewBox=\"0 0 150 142\" width=\"94\" height=\"66\"><line x1=\"8\" y1=\"120\" x2=\"142\" y2=\"120\" stroke=\"#c4ccd6\" stroke-width=\"3\" stroke-linecap=\"round\"/><line x1=\"50\" y1=\"116\" x2=\"68\" y2=\"116\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><line x1=\"51\" y1=\"116\" x2=\"54\" y2=\"100\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><circle cx=\"48\" cy=\"96\" r=\"7\" fill=\"#1f2a3a\"/><polyline points=\"54,100 90,108 116,116\" fill=\"none\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><text x=\"75\" y=\"137\" text-anchor=\"middle\" font-size=\"9\" fill=\"#9aa4b2\" font-family=\"Arial\">HOLD</text></svg>"
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "name": "Pull",
+      "focus": "Back · biceps · rear delts",
+      "optional": false,
+      "estimatedMinutes": 55,
+      "warmup": {
+        "guidance": "Do these in order — high knees to raise your heart rate, then the drills to prime the pattern. Ramp up your first heavy lift — e.g. empty bar ×8, ~60% ×5, ~80% ×3, ~90% ×1–2, then your working sets. The day’s second main lift gets 1–2 light feeler sets; accessories need none.",
+        "exercises": [
+          {
+            "key": "highknees",
+            "name": "High Knees",
+            "cue": "Jog on the spot, drive knees up",
+            "sets": "—",
+            "reps": "2–3 min",
+            "demoUrl": "https://musclewiki.com/exercise/cardio-knee-taps",
+            "illustrationSvg": "<svg viewBox=\"0 0 150 132\" width=\"92\" height=\"80\"><line x1=\"8\" y1=\"120\" x2=\"142\" y2=\"120\" stroke=\"#c4ccd6\" stroke-width=\"3\" stroke-linecap=\"round\"/><line x1=\"78\" y1=\"118\" x2=\"78\" y2=\"96\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><line x1=\"78\" y1=\"96\" x2=\"76\" y2=\"74\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><line x1=\"76\" y1=\"74\" x2=\"62\" y2=\"72\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><line x1=\"62\" y1=\"72\" x2=\"64\" y2=\"86\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><line x1=\"76\" y1=\"74\" x2=\"76\" y2=\"50\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><circle cx=\"76\" cy=\"42\" r=\"7\" fill=\"#1f2a3a\"/><polyline points=\"76,54 66,56 66,48\" fill=\"none\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><polyline points=\"76,54 86,58 86,66\" fill=\"none\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>"
+          },
+          {
+            "key": "bandpull",
+            "name": "Band Pull-Apart",
+            "cue": "Arms straight, pull to chest",
+            "sets": "2",
+            "reps": "15",
+            "demoUrl": "https://musclewiki.com/exercise/band-pull-apart",
+            "illustrationSvg": "<svg viewBox=\"0 0 150 132\" width=\"92\" height=\"80\"><line x1=\"8\" y1=\"120\" x2=\"142\" y2=\"120\" stroke=\"#c4ccd6\" stroke-width=\"3\" stroke-linecap=\"round\"/><line x1=\"66\" y1=\"120\" x2=\"72\" y2=\"86\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><line x1=\"78\" y1=\"120\" x2=\"72\" y2=\"86\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><line x1=\"72\" y1=\"86\" x2=\"72\" y2=\"52\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><circle cx=\"72\" cy=\"42\" r=\"7\" fill=\"#1f2a3a\"/><line x1=\"72\" y1=\"58\" x2=\"50\" y2=\"58\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><line x1=\"72\" y1=\"58\" x2=\"94\" y2=\"58\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><path d=\"M 50 58 L 94 58\" fill=\"none\" stroke=\"#e08a1e\" stroke-width=\"3\" stroke-dasharray=\"1.5 3.5\" stroke-linecap=\"round\"/></svg>"
+          },
+          {
+            "key": "scapretr",
+            "name": "Scapular Pull",
+            "cue": "Hang, pull shoulders down",
+            "sets": "2",
+            "reps": "8",
+            "demoUrl": "https://musclewiki.com/exercise/scapular-retraction",
+            "illustrationSvg": "<svg viewBox=\"0 0 150 132\" width=\"92\" height=\"80\"><line x1=\"41\" y1=\"22\" x2=\"109\" y2=\"22\" stroke=\"#8a94a3\" stroke-width=\"4\"/><line x1=\"46\" y1=\"8\" x2=\"46\" y2=\"22\" stroke=\"#8a94a3\" stroke-width=\"3\"/><line x1=\"104\" y1=\"8\" x2=\"104\" y2=\"22\" stroke=\"#8a94a3\" stroke-width=\"3\"/><polyline points=\"70,22 73,50\" fill=\"none\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><polyline points=\"80,22 77,50\" fill=\"none\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><circle cx=\"75\" cy=\"50\" r=\"7\" fill=\"#1f2a3a\"/><line x1=\"75\" y1=\"54\" x2=\"75\" y2=\"84\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><polyline points=\"75,84 68,110\" fill=\"none\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><polyline points=\"75,84 82,110\" fill=\"none\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>"
+          },
+          {
+            "key": "armcircle",
+            "name": "Arm Circles",
+            "cue": "Small-to-big, both directions",
+            "sets": "2",
+            "reps": "20 ea",
+            "demoUrl": "https://musclewiki.com/exercise/forward-arm-circle",
+            "illustrationSvg": "<svg viewBox=\"0 0 150 132\" width=\"92\" height=\"80\"><line x1=\"8\" y1=\"120\" x2=\"142\" y2=\"120\" stroke=\"#c4ccd6\" stroke-width=\"3\" stroke-linecap=\"round\"/><line x1=\"66\" y1=\"120\" x2=\"72\" y2=\"86\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><line x1=\"78\" y1=\"120\" x2=\"72\" y2=\"86\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><line x1=\"72\" y1=\"86\" x2=\"72\" y2=\"54\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><circle cx=\"72\" cy=\"44\" r=\"7\" fill=\"#1f2a3a\"/><line x1=\"72\" y1=\"58\" x2=\"98\" y2=\"52\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><path d=\"M 104 46 a 9 9 0 1 0 8 4\" fill=\"none\" stroke=\"#1f2a3a\" stroke-width=\"2\"/><line x1=\"112\" y1=\"50\" x2=\"108\" y2=\"49\" stroke=\"#1f2a3a\" stroke-width=\"2\" stroke-linecap=\"round\"/><line x1=\"112\" y1=\"50\" x2=\"111\" y2=\"55\" stroke=\"#1f2a3a\" stroke-width=\"2\" stroke-linecap=\"round\"/></svg>"
+          }
+        ]
+      },
+      "exercises": [
+        {
+          "key": "pullup",
+          "name": "Pull-Up (band-assisted)",
+          "cue": "Loop band under feet if needed",
+          "sets": "4",
+          "reps": "6",
+          "restSeconds": 120,
+          "restLabel": "2 min",
+          "weight": "Band",
+          "demoUrl": "https://musclewiki.com/exercise/pull-ups",
+          "illustrationSvg": "<svg viewBox=\"0 0 312 142\" width=\"150\" height=\"68\"><g transform=\"translate(0,0)\"><line x1=\"8\" y1=\"120\" x2=\"142\" y2=\"120\" stroke=\"#c4ccd6\" stroke-width=\"3\" stroke-linecap=\"round\"/><line x1=\"41\" y1=\"22\" x2=\"109\" y2=\"22\" stroke=\"#8a94a3\" stroke-width=\"4\"/><line x1=\"46\" y1=\"8\" x2=\"46\" y2=\"22\" stroke=\"#8a94a3\" stroke-width=\"3\"/><line x1=\"104\" y1=\"8\" x2=\"104\" y2=\"22\" stroke=\"#8a94a3\" stroke-width=\"3\"/><polyline points=\"70,24 74,48\" fill=\"none\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><polyline points=\"80,24 76,48\" fill=\"none\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><circle cx=\"75\" cy=\"52\" r=\"7\" fill=\"#1f2a3a\"/><line x1=\"75\" y1=\"56\" x2=\"75\" y2=\"86\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><polyline points=\"75,86 69,110\" fill=\"none\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><polyline points=\"75,86 81,110\" fill=\"none\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></g><g transform=\"translate(162,0)\"><line x1=\"8\" y1=\"120\" x2=\"142\" y2=\"120\" stroke=\"#c4ccd6\" stroke-width=\"3\" stroke-linecap=\"round\"/><line x1=\"41\" y1=\"22\" x2=\"109\" y2=\"22\" stroke=\"#8a94a3\" stroke-width=\"4\"/><line x1=\"46\" y1=\"8\" x2=\"46\" y2=\"22\" stroke=\"#8a94a3\" stroke-width=\"3\"/><line x1=\"104\" y1=\"8\" x2=\"104\" y2=\"22\" stroke=\"#8a94a3\" stroke-width=\"3\"/><polyline points=\"70,24 66,36 73,44\" fill=\"none\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><polyline points=\"80,24 84,36 77,44\" fill=\"none\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><circle cx=\"75\" cy=\"40\" r=\"7\" fill=\"#1f2a3a\"/><line x1=\"75\" y1=\"44\" x2=\"75\" y2=\"74\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><polyline points=\"75,74 69,98\" fill=\"none\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><polyline points=\"75,74 81,98\" fill=\"none\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></g><line x1=\"146\" y1=\"64\" x2=\"164\" y2=\"64\" stroke=\"#c0392b\" stroke-width=\"3.6\" stroke-linecap=\"round\"/><line x1=\"164\" y1=\"64\" x2=\"158\" y2=\"60\" stroke=\"#c0392b\" stroke-width=\"3.6\" stroke-linecap=\"round\"/><line x1=\"164\" y1=\"64\" x2=\"158\" y2=\"68\" stroke=\"#c0392b\" stroke-width=\"3.6\" stroke-linecap=\"round\"/><text x=\"75\" y=\"137\" text-anchor=\"middle\" font-size=\"9\" fill=\"#9aa4b2\" font-family=\"Arial\">START</text><text x=\"237\" y=\"137\" text-anchor=\"middle\" font-size=\"9\" fill=\"#9aa4b2\" font-family=\"Arial\">END</text></svg>"
+        },
+        {
+          "key": "singlearmrow",
+          "name": "Dumbbell Single-Arm Row",
+          "cue": "Hand & knee on bench, back supported",
+          "sets": "4",
+          "reps": "8 / arm",
+          "restSeconds": 90,
+          "restLabel": "90 s",
+          "weight": "20 kg ea",
+          "demoUrl": "https://musclewiki.com/exercise/dumbbell-single-arm-row",
+          "illustrationSvg": "<svg viewBox=\"0 0 312 142\" width=\"150\" height=\"68\"><g transform=\"translate(0,0)\"><line x1=\"8\" y1=\"120\" x2=\"142\" y2=\"120\" stroke=\"#c4ccd6\" stroke-width=\"3\" stroke-linecap=\"round\"/><rect x=\"52\" y=\"98\" width=\"40\" height=\"7\" rx=\"2\" fill=\"#8a94a3\"/><line x1=\"58\" y1=\"105\" x2=\"58\" y2=\"119\" stroke=\"#8a94a3\" stroke-width=\"3\"/><line x1=\"86\" y1=\"105\" x2=\"86\" y2=\"119\" stroke=\"#8a94a3\" stroke-width=\"3\"/><line x1=\"58\" y1=\"98\" x2=\"62\" y2=\"82\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><polyline points=\"62,82 88,86\" fill=\"none\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><circle cx=\"58\" cy=\"78\" r=\"7\" fill=\"#1f2a3a\"/><polyline points=\"88,86 90,98\" fill=\"none\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><line x1=\"72\" y1=\"84\" x2=\"72\" y2=\"100\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><circle cx=\"72\" cy=\"99\" r=\"4.4\" fill=\"#c0392b\"/><circle cx=\"72\" cy=\"109\" r=\"4.4\" fill=\"#c0392b\"/><line x1=\"72\" y1=\"99\" x2=\"72\" y2=\"109\" stroke=\"#c0392b\" stroke-width=\"3\"/></g><g transform=\"translate(162,0)\"><line x1=\"8\" y1=\"120\" x2=\"142\" y2=\"120\" stroke=\"#c4ccd6\" stroke-width=\"3\" stroke-linecap=\"round\"/><rect x=\"52\" y=\"98\" width=\"40\" height=\"7\" rx=\"2\" fill=\"#8a94a3\"/><line x1=\"58\" y1=\"105\" x2=\"58\" y2=\"119\" stroke=\"#8a94a3\" stroke-width=\"3\"/><line x1=\"86\" y1=\"105\" x2=\"86\" y2=\"119\" stroke=\"#8a94a3\" stroke-width=\"3\"/><line x1=\"58\" y1=\"98\" x2=\"62\" y2=\"82\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><polyline points=\"62,82 88,86\" fill=\"none\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><circle cx=\"58\" cy=\"78\" r=\"7\" fill=\"#1f2a3a\"/><polyline points=\"88,86 90,98\" fill=\"none\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><line x1=\"72\" y1=\"84\" x2=\"78\" y2=\"92\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><circle cx=\"80\" cy=\"89\" r=\"4.4\" fill=\"#c0392b\"/><circle cx=\"80\" cy=\"99\" r=\"4.4\" fill=\"#c0392b\"/><line x1=\"80\" y1=\"89\" x2=\"80\" y2=\"99\" stroke=\"#c0392b\" stroke-width=\"3\"/></g><line x1=\"146\" y1=\"64\" x2=\"164\" y2=\"64\" stroke=\"#c0392b\" stroke-width=\"3.6\" stroke-linecap=\"round\"/><line x1=\"164\" y1=\"64\" x2=\"158\" y2=\"60\" stroke=\"#c0392b\" stroke-width=\"3.6\" stroke-linecap=\"round\"/><line x1=\"164\" y1=\"64\" x2=\"158\" y2=\"68\" stroke=\"#c0392b\" stroke-width=\"3.6\" stroke-linecap=\"round\"/><text x=\"75\" y=\"137\" text-anchor=\"middle\" font-size=\"9\" fill=\"#9aa4b2\" font-family=\"Arial\">START</text><text x=\"237\" y=\"137\" text-anchor=\"middle\" font-size=\"9\" fill=\"#9aa4b2\" font-family=\"Arial\">END</text></svg>"
+        },
+        {
+          "key": "csrow",
+          "name": "DB Chest-Supported Row",
+          "cue": "Face-down on incline, row to hips",
+          "sets": "3",
+          "reps": "10",
+          "restSeconds": 90,
+          "restLabel": "90 s",
+          "weight": "15 kg ea",
+          "demoUrl": "https://musclewiki.com/exercise/dumbbell-laying-incline-row",
+          "illustrationSvg": "<svg viewBox=\"0 0 312 142\" width=\"150\" height=\"68\"><g transform=\"translate(0,0)\"><line x1=\"8\" y1=\"120\" x2=\"142\" y2=\"120\" stroke=\"#c4ccd6\" stroke-width=\"3\" stroke-linecap=\"round\"/><path d=\"M 46 112 L 104 74\" stroke=\"#8a94a3\" stroke-width=\"8\" stroke-linecap=\"round\"/><line x1=\"56\" y1=\"104\" x2=\"100\" y2=\"76\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><circle cx=\"104\" cy=\"72\" r=\"7\" fill=\"#1f2a3a\"/><line x1=\"80\" y1=\"90\" x2=\"82\" y2=\"104\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><circle cx=\"82\" cy=\"103\" r=\"4.4\" fill=\"#c0392b\"/><circle cx=\"82\" cy=\"113\" r=\"4.4\" fill=\"#c0392b\"/><line x1=\"82\" y1=\"103\" x2=\"82\" y2=\"113\" stroke=\"#c0392b\" stroke-width=\"3\"/><line x1=\"90\" y1=\"84\" x2=\"92\" y2=\"98\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><circle cx=\"92\" cy=\"97\" r=\"4.4\" fill=\"#c0392b\"/><circle cx=\"92\" cy=\"107\" r=\"4.4\" fill=\"#c0392b\"/><line x1=\"92\" y1=\"97\" x2=\"92\" y2=\"107\" stroke=\"#c0392b\" stroke-width=\"3\"/></g><g transform=\"translate(162,0)\"><line x1=\"8\" y1=\"120\" x2=\"142\" y2=\"120\" stroke=\"#c4ccd6\" stroke-width=\"3\" stroke-linecap=\"round\"/><path d=\"M 46 112 L 104 74\" stroke=\"#8a94a3\" stroke-width=\"8\" stroke-linecap=\"round\"/><line x1=\"56\" y1=\"104\" x2=\"100\" y2=\"76\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><circle cx=\"104\" cy=\"72\" r=\"7\" fill=\"#1f2a3a\"/><line x1=\"80\" y1=\"90\" x2=\"76\" y2=\"100\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><circle cx=\"74\" cy=\"97\" r=\"4.4\" fill=\"#c0392b\"/><circle cx=\"74\" cy=\"107\" r=\"4.4\" fill=\"#c0392b\"/><line x1=\"74\" y1=\"97\" x2=\"74\" y2=\"107\" stroke=\"#c0392b\" stroke-width=\"3\"/><line x1=\"90\" y1=\"84\" x2=\"86\" y2=\"94\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><circle cx=\"84\" cy=\"91\" r=\"4.4\" fill=\"#c0392b\"/><circle cx=\"84\" cy=\"101\" r=\"4.4\" fill=\"#c0392b\"/><line x1=\"84\" y1=\"91\" x2=\"84\" y2=\"101\" stroke=\"#c0392b\" stroke-width=\"3\"/></g><line x1=\"146\" y1=\"64\" x2=\"164\" y2=\"64\" stroke=\"#c0392b\" stroke-width=\"3.6\" stroke-linecap=\"round\"/><line x1=\"164\" y1=\"64\" x2=\"158\" y2=\"60\" stroke=\"#c0392b\" stroke-width=\"3.6\" stroke-linecap=\"round\"/><line x1=\"164\" y1=\"64\" x2=\"158\" y2=\"68\" stroke=\"#c0392b\" stroke-width=\"3.6\" stroke-linecap=\"round\"/><text x=\"75\" y=\"137\" text-anchor=\"middle\" font-size=\"9\" fill=\"#9aa4b2\" font-family=\"Arial\">START</text><text x=\"237\" y=\"137\" text-anchor=\"middle\" font-size=\"9\" fill=\"#9aa4b2\" font-family=\"Arial\">END</text></svg>"
+        },
+        {
+          "key": "reardelt",
+          "name": "Dumbbell Rear Delt Fly",
+          "cue": "Hinge over, raise dumbbells out wide",
+          "sets": "3",
+          "reps": "15",
+          "restSeconds": 60,
+          "restLabel": "60 s",
+          "weight": "4.6 kg ea",
+          "demoUrl": "https://musclewiki.com/exercise/dumbbell-rear-delt-fly",
+          "illustrationSvg": "<svg viewBox=\"0 0 312 142\" width=\"150\" height=\"68\"><g transform=\"translate(0,0)\"><line x1=\"8\" y1=\"120\" x2=\"142\" y2=\"120\" stroke=\"#c4ccd6\" stroke-width=\"3\" stroke-linecap=\"round\"/><line x1=\"70\" y1=\"120\" x2=\"74\" y2=\"86\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><line x1=\"74\" y1=\"86\" x2=\"70\" y2=\"80\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><line x1=\"70\" y1=\"80\" x2=\"46\" y2=\"62\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><circle cx=\"40\" cy=\"58\" r=\"7\" fill=\"#1f2a3a\"/><line x1=\"48\" y1=\"62\" x2=\"50\" y2=\"80\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><circle cx=\"50\" cy=\"79\" r=\"4.4\" fill=\"#c0392b\"/><circle cx=\"50\" cy=\"89\" r=\"4.4\" fill=\"#c0392b\"/><line x1=\"50\" y1=\"79\" x2=\"50\" y2=\"89\" stroke=\"#c0392b\" stroke-width=\"3\"/><line x1=\"46\" y1=\"62\" x2=\"44\" y2=\"80\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><circle cx=\"44\" cy=\"79\" r=\"4.4\" fill=\"#c0392b\"/><circle cx=\"44\" cy=\"89\" r=\"4.4\" fill=\"#c0392b\"/><line x1=\"44\" y1=\"79\" x2=\"44\" y2=\"89\" stroke=\"#c0392b\" stroke-width=\"3\"/></g><g transform=\"translate(162,0)\"><line x1=\"8\" y1=\"120\" x2=\"142\" y2=\"120\" stroke=\"#c4ccd6\" stroke-width=\"3\" stroke-linecap=\"round\"/><line x1=\"70\" y1=\"120\" x2=\"74\" y2=\"86\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><line x1=\"74\" y1=\"86\" x2=\"70\" y2=\"80\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><line x1=\"70\" y1=\"80\" x2=\"46\" y2=\"62\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><circle cx=\"40\" cy=\"58\" r=\"7\" fill=\"#1f2a3a\"/><line x1=\"46\" y1=\"62\" x2=\"28\" y2=\"58\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><circle cx=\"25\" cy=\"52\" r=\"4.4\" fill=\"#c0392b\"/><circle cx=\"25\" cy=\"62\" r=\"4.4\" fill=\"#c0392b\"/><line x1=\"25\" y1=\"52\" x2=\"25\" y2=\"62\" stroke=\"#c0392b\" stroke-width=\"3\"/><line x1=\"46\" y1=\"62\" x2=\"64\" y2=\"58\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><circle cx=\"67\" cy=\"52\" r=\"4.4\" fill=\"#c0392b\"/><circle cx=\"67\" cy=\"62\" r=\"4.4\" fill=\"#c0392b\"/><line x1=\"67\" y1=\"52\" x2=\"67\" y2=\"62\" stroke=\"#c0392b\" stroke-width=\"3\"/></g><line x1=\"146\" y1=\"64\" x2=\"164\" y2=\"64\" stroke=\"#c0392b\" stroke-width=\"3.6\" stroke-linecap=\"round\"/><line x1=\"164\" y1=\"64\" x2=\"158\" y2=\"60\" stroke=\"#c0392b\" stroke-width=\"3.6\" stroke-linecap=\"round\"/><line x1=\"164\" y1=\"64\" x2=\"158\" y2=\"68\" stroke=\"#c0392b\" stroke-width=\"3.6\" stroke-linecap=\"round\"/><text x=\"75\" y=\"137\" text-anchor=\"middle\" font-size=\"9\" fill=\"#9aa4b2\" font-family=\"Arial\">START</text><text x=\"237\" y=\"137\" text-anchor=\"middle\" font-size=\"9\" fill=\"#9aa4b2\" font-family=\"Arial\">END</text></svg>"
+        },
+        {
+          "key": "curl",
+          "name": "EZ-Bar Bicep Curl",
+          "cue": "Elbows pinned, curl to shoulders",
+          "sets": "3",
+          "reps": "10",
+          "restSeconds": 60,
+          "restLabel": "60 s",
+          "weight": "20 kg",
+          "demoUrl": "https://musclewiki.com/exercise/ez-bar-curl",
+          "illustrationSvg": "<svg viewBox=\"0 0 312 142\" width=\"150\" height=\"68\"><g transform=\"translate(0,0)\"><line x1=\"8\" y1=\"120\" x2=\"142\" y2=\"120\" stroke=\"#c4ccd6\" stroke-width=\"3\" stroke-linecap=\"round\"/><line x1=\"66\" y1=\"120\" x2=\"72\" y2=\"86\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><line x1=\"78\" y1=\"120\" x2=\"72\" y2=\"86\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><line x1=\"72\" y1=\"86\" x2=\"72\" y2=\"52\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><circle cx=\"72\" cy=\"42\" r=\"7\" fill=\"#1f2a3a\"/><line x1=\"72\" y1=\"58\" x2=\"72\" y2=\"80\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><circle cx=\"72\" cy=\"84\" r=\"7\" fill=\"#c0392b\"/><circle cx=\"72\" cy=\"84\" r=\"2.4\" fill=\"#7a1f16\"/></g><g transform=\"translate(162,0)\"><line x1=\"8\" y1=\"120\" x2=\"142\" y2=\"120\" stroke=\"#c4ccd6\" stroke-width=\"3\" stroke-linecap=\"round\"/><line x1=\"66\" y1=\"120\" x2=\"72\" y2=\"86\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><line x1=\"78\" y1=\"120\" x2=\"72\" y2=\"86\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><line x1=\"72\" y1=\"86\" x2=\"72\" y2=\"52\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><circle cx=\"72\" cy=\"42\" r=\"7\" fill=\"#1f2a3a\"/><line x1=\"72\" y1=\"58\" x2=\"74\" y2=\"66\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><circle cx=\"74\" cy=\"62\" r=\"7\" fill=\"#c0392b\"/><circle cx=\"74\" cy=\"62\" r=\"2.4\" fill=\"#7a1f16\"/></g><line x1=\"146\" y1=\"64\" x2=\"164\" y2=\"64\" stroke=\"#c0392b\" stroke-width=\"3.6\" stroke-linecap=\"round\"/><line x1=\"164\" y1=\"64\" x2=\"158\" y2=\"60\" stroke=\"#c0392b\" stroke-width=\"3.6\" stroke-linecap=\"round\"/><line x1=\"164\" y1=\"64\" x2=\"158\" y2=\"68\" stroke=\"#c0392b\" stroke-width=\"3.6\" stroke-linecap=\"round\"/><text x=\"75\" y=\"137\" text-anchor=\"middle\" font-size=\"9\" fill=\"#9aa4b2\" font-family=\"Arial\">START</text><text x=\"237\" y=\"137\" text-anchor=\"middle\" font-size=\"9\" fill=\"#9aa4b2\" font-family=\"Arial\">END</text></svg>"
+        },
+        {
+          "key": "revcurl",
+          "name": "Dumbbell Reverse Curl",
+          "cue": "Palms-down grip, curl to shoulders",
+          "sets": "3",
+          "reps": "12–15",
+          "restSeconds": 45,
+          "restLabel": "45 s",
+          "weight": "7.1 kg ea",
+          "demoUrl": "https://musclewiki.com/exercise/dumbbell-reverse-curl",
+          "illustrationSvg": "<svg viewBox=\"0 0 312 142\" width=\"150\" height=\"68\"><g transform=\"translate(0,0)\"><line x1=\"8\" y1=\"120\" x2=\"142\" y2=\"120\" stroke=\"#c4ccd6\" stroke-width=\"3\" stroke-linecap=\"round\"/><line x1=\"66\" y1=\"120\" x2=\"72\" y2=\"86\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><line x1=\"78\" y1=\"120\" x2=\"72\" y2=\"86\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><line x1=\"72\" y1=\"86\" x2=\"72\" y2=\"52\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><circle cx=\"72\" cy=\"42\" r=\"7\" fill=\"#1f2a3a\"/><line x1=\"72\" y1=\"58\" x2=\"66\" y2=\"80\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><circle cx=\"66\" cy=\"79\" r=\"4.4\" fill=\"#c0392b\"/><circle cx=\"66\" cy=\"89\" r=\"4.4\" fill=\"#c0392b\"/><line x1=\"66\" y1=\"79\" x2=\"66\" y2=\"89\" stroke=\"#c0392b\" stroke-width=\"3\"/><line x1=\"72\" y1=\"58\" x2=\"78\" y2=\"80\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><circle cx=\"78\" cy=\"79\" r=\"4.4\" fill=\"#c0392b\"/><circle cx=\"78\" cy=\"89\" r=\"4.4\" fill=\"#c0392b\"/><line x1=\"78\" y1=\"79\" x2=\"78\" y2=\"89\" stroke=\"#c0392b\" stroke-width=\"3\"/></g><g transform=\"translate(162,0)\"><line x1=\"8\" y1=\"120\" x2=\"142\" y2=\"120\" stroke=\"#c4ccd6\" stroke-width=\"3\" stroke-linecap=\"round\"/><line x1=\"66\" y1=\"120\" x2=\"72\" y2=\"86\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><line x1=\"78\" y1=\"120\" x2=\"72\" y2=\"86\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><line x1=\"72\" y1=\"86\" x2=\"72\" y2=\"52\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><circle cx=\"72\" cy=\"42\" r=\"7\" fill=\"#1f2a3a\"/><line x1=\"72\" y1=\"58\" x2=\"66\" y2=\"64\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><circle cx=\"66\" cy=\"55\" r=\"4.4\" fill=\"#c0392b\"/><circle cx=\"66\" cy=\"65\" r=\"4.4\" fill=\"#c0392b\"/><line x1=\"66\" y1=\"55\" x2=\"66\" y2=\"65\" stroke=\"#c0392b\" stroke-width=\"3\"/><line x1=\"72\" y1=\"58\" x2=\"78\" y2=\"64\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><circle cx=\"78\" cy=\"55\" r=\"4.4\" fill=\"#c0392b\"/><circle cx=\"78\" cy=\"65\" r=\"4.4\" fill=\"#c0392b\"/><line x1=\"78\" y1=\"55\" x2=\"78\" y2=\"65\" stroke=\"#c0392b\" stroke-width=\"3\"/></g><line x1=\"146\" y1=\"64\" x2=\"164\" y2=\"64\" stroke=\"#c0392b\" stroke-width=\"3.6\" stroke-linecap=\"round\"/><line x1=\"164\" y1=\"64\" x2=\"158\" y2=\"60\" stroke=\"#c0392b\" stroke-width=\"3.6\" stroke-linecap=\"round\"/><line x1=\"164\" y1=\"64\" x2=\"158\" y2=\"68\" stroke=\"#c0392b\" stroke-width=\"3.6\" stroke-linecap=\"round\"/><text x=\"75\" y=\"137\" text-anchor=\"middle\" font-size=\"9\" fill=\"#9aa4b2\" font-family=\"Arial\">START</text><text x=\"237\" y=\"137\" text-anchor=\"middle\" font-size=\"9\" fill=\"#9aa4b2\" font-family=\"Arial\">END</text></svg>"
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "name": "Legs",
+      "focus": "Quads · hamstrings · glutes",
+      "optional": false,
+      "estimatedMinutes": 65,
+      "warmup": {
+        "guidance": "Do these in order — high knees to raise your heart rate, then the drills to prime the pattern. Ramp up your first heavy lift — e.g. empty bar ×8, ~60% ×5, ~80% ×3, ~90% ×1–2, then your working sets. The day’s second main lift gets 1–2 light feeler sets; accessories need none.",
+        "exercises": [
+          {
+            "key": "highknees",
+            "name": "High Knees",
+            "cue": "Jog on the spot, drive knees up",
+            "sets": "—",
+            "reps": "2–3 min",
+            "demoUrl": "https://musclewiki.com/exercise/cardio-knee-taps",
+            "illustrationSvg": "<svg viewBox=\"0 0 150 132\" width=\"92\" height=\"80\"><line x1=\"8\" y1=\"120\" x2=\"142\" y2=\"120\" stroke=\"#c4ccd6\" stroke-width=\"3\" stroke-linecap=\"round\"/><line x1=\"78\" y1=\"118\" x2=\"78\" y2=\"96\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><line x1=\"78\" y1=\"96\" x2=\"76\" y2=\"74\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><line x1=\"76\" y1=\"74\" x2=\"62\" y2=\"72\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><line x1=\"62\" y1=\"72\" x2=\"64\" y2=\"86\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><line x1=\"76\" y1=\"74\" x2=\"76\" y2=\"50\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><circle cx=\"76\" cy=\"42\" r=\"7\" fill=\"#1f2a3a\"/><polyline points=\"76,54 66,56 66,48\" fill=\"none\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><polyline points=\"76,54 86,58 86,66\" fill=\"none\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>"
+          },
+          {
+            "key": "bwsquat",
+            "name": "Bodyweight Squat",
+            "cue": "Full depth, controlled",
+            "sets": "2",
+            "reps": "10",
+            "demoUrl": "https://musclewiki.com/exercise/bodyweight-squat",
+            "illustrationSvg": "<svg viewBox=\"0 0 150 132\" width=\"92\" height=\"80\"><line x1=\"8\" y1=\"120\" x2=\"142\" y2=\"120\" stroke=\"#c4ccd6\" stroke-width=\"3\" stroke-linecap=\"round\"/><polyline points=\"88,120 84,86 64,80\" fill=\"none\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><line x1=\"64\" y1=\"80\" x2=\"60\" y2=\"52\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><circle cx=\"58\" cy=\"42\" r=\"7\" fill=\"#1f2a3a\"/><line x1=\"60\" y1=\"56\" x2=\"84\" y2=\"54\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/></svg>"
+          },
+          {
+            "key": "bwgm",
+            "name": "Bodyweight Good Morning",
+            "cue": "Hinge at hips, flat back",
+            "sets": "2",
+            "reps": "10",
+            "demoUrl": "https://musclewiki.com/exercise/good-mornings",
+            "illustrationSvg": "<svg viewBox=\"0 0 150 132\" width=\"92\" height=\"80\"><line x1=\"8\" y1=\"120\" x2=\"142\" y2=\"120\" stroke=\"#c4ccd6\" stroke-width=\"3\" stroke-linecap=\"round\"/><polyline points=\"72,120 76,86 72,80\" fill=\"none\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><line x1=\"72\" y1=\"80\" x2=\"46\" y2=\"60\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><circle cx=\"40\" cy=\"56\" r=\"7\" fill=\"#1f2a3a\"/><polyline points=\"48,60 44,50 37,53\" fill=\"none\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>"
+          },
+          {
+            "key": "glutebridge",
+            "name": "Glute Bridge",
+            "cue": "Squeeze glutes at the top",
+            "sets": "2",
+            "reps": "12",
+            "demoUrl": "https://musclewiki.com/exercise/glute-bridge",
+            "illustrationSvg": "<svg viewBox=\"0 0 150 132\" width=\"92\" height=\"80\"><line x1=\"8\" y1=\"120\" x2=\"142\" y2=\"120\" stroke=\"#c4ccd6\" stroke-width=\"3\" stroke-linecap=\"round\"/><polyline points=\"54,120 72,98 90,104\" fill=\"none\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><line x1=\"90\" y1=\"104\" x2=\"112\" y2=\"118\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><circle cx=\"117\" cy=\"114\" r=\"7\" fill=\"#1f2a3a\"/></svg>"
+          }
+        ]
+      },
+      "exercises": [
+        {
+          "key": "squat",
+          "name": "Barbell Back Squat",
+          "cue": "Bar on upper back, sit down & drive up",
+          "sets": "4",
+          "reps": "5",
+          "restSeconds": 180,
+          "restLabel": "3 min",
+          "weight": "40 kg",
+          "demoUrl": "https://musclewiki.com/exercise/barbell-squat",
+          "illustrationSvg": "<svg viewBox=\"0 0 312 142\" width=\"150\" height=\"68\"><g transform=\"translate(0,0)\"><line x1=\"8\" y1=\"120\" x2=\"142\" y2=\"120\" stroke=\"#c4ccd6\" stroke-width=\"3\" stroke-linecap=\"round\"/><line x1=\"72\" y1=\"120\" x2=\"72\" y2=\"94\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><line x1=\"72\" y1=\"94\" x2=\"72\" y2=\"78\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><line x1=\"72\" y1=\"78\" x2=\"66\" y2=\"52\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><circle cx=\"60\" cy=\"44\" r=\"7\" fill=\"#1f2a3a\"/><circle cx=\"72\" cy=\"51\" r=\"7\" fill=\"#c0392b\"/><circle cx=\"72\" cy=\"51\" r=\"2.4\" fill=\"#7a1f16\"/></g><g transform=\"translate(162,0)\"><line x1=\"8\" y1=\"120\" x2=\"142\" y2=\"120\" stroke=\"#c4ccd6\" stroke-width=\"3\" stroke-linecap=\"round\"/><line x1=\"72\" y1=\"120\" x2=\"86\" y2=\"100\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><line x1=\"86\" y1=\"100\" x2=\"60\" y2=\"96\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><line x1=\"60\" y1=\"96\" x2=\"54\" y2=\"64\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><circle cx=\"48\" cy=\"56\" r=\"7\" fill=\"#1f2a3a\"/><circle cx=\"60\" cy=\"63\" r=\"7\" fill=\"#c0392b\"/><circle cx=\"60\" cy=\"63\" r=\"2.4\" fill=\"#7a1f16\"/></g><line x1=\"146\" y1=\"64\" x2=\"164\" y2=\"64\" stroke=\"#c0392b\" stroke-width=\"3.6\" stroke-linecap=\"round\"/><line x1=\"164\" y1=\"64\" x2=\"158\" y2=\"60\" stroke=\"#c0392b\" stroke-width=\"3.6\" stroke-linecap=\"round\"/><line x1=\"164\" y1=\"64\" x2=\"158\" y2=\"68\" stroke=\"#c0392b\" stroke-width=\"3.6\" stroke-linecap=\"round\"/><text x=\"75\" y=\"137\" text-anchor=\"middle\" font-size=\"9\" fill=\"#9aa4b2\" font-family=\"Arial\">START</text><text x=\"237\" y=\"137\" text-anchor=\"middle\" font-size=\"9\" fill=\"#9aa4b2\" font-family=\"Arial\">END</text></svg>"
+        },
+        {
+          "key": "rdl",
+          "name": "Barbell Romanian Deadlift",
+          "cue": "Push hips back, soft knees, flat back",
+          "sets": "4",
+          "reps": "6",
+          "restSeconds": 150,
+          "restLabel": "2–3 min",
+          "weight": "40 kg",
+          "demoUrl": "https://musclewiki.com/exercise/barbell-romanian-deadlift",
+          "illustrationSvg": "<svg viewBox=\"0 0 312 142\" width=\"150\" height=\"68\"><g transform=\"translate(0,0)\"><line x1=\"8\" y1=\"120\" x2=\"142\" y2=\"120\" stroke=\"#c4ccd6\" stroke-width=\"3\" stroke-linecap=\"round\"/><line x1=\"72\" y1=\"120\" x2=\"72\" y2=\"94\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><line x1=\"72\" y1=\"94\" x2=\"72\" y2=\"80\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><line x1=\"72\" y1=\"80\" x2=\"72\" y2=\"50\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><circle cx=\"72\" cy=\"40\" r=\"7\" fill=\"#1f2a3a\"/><line x1=\"72\" y1=\"56\" x2=\"68\" y2=\"86\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><circle cx=\"66\" cy=\"90\" r=\"7\" fill=\"#c0392b\"/><circle cx=\"66\" cy=\"90\" r=\"2.4\" fill=\"#7a1f16\"/></g><g transform=\"translate(162,0)\"><line x1=\"8\" y1=\"120\" x2=\"142\" y2=\"120\" stroke=\"#c4ccd6\" stroke-width=\"3\" stroke-linecap=\"round\"/><line x1=\"70\" y1=\"120\" x2=\"74\" y2=\"84\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><line x1=\"74\" y1=\"84\" x2=\"70\" y2=\"78\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><line x1=\"70\" y1=\"78\" x2=\"44\" y2=\"58\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><circle cx=\"38\" cy=\"54\" r=\"7\" fill=\"#1f2a3a\"/><line x1=\"46\" y1=\"60\" x2=\"52\" y2=\"90\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><circle cx=\"52\" cy=\"94\" r=\"7\" fill=\"#c0392b\"/><circle cx=\"52\" cy=\"94\" r=\"2.4\" fill=\"#7a1f16\"/></g><line x1=\"146\" y1=\"64\" x2=\"164\" y2=\"64\" stroke=\"#c0392b\" stroke-width=\"3.6\" stroke-linecap=\"round\"/><line x1=\"164\" y1=\"64\" x2=\"158\" y2=\"60\" stroke=\"#c0392b\" stroke-width=\"3.6\" stroke-linecap=\"round\"/><line x1=\"164\" y1=\"64\" x2=\"158\" y2=\"68\" stroke=\"#c0392b\" stroke-width=\"3.6\" stroke-linecap=\"round\"/><text x=\"75\" y=\"137\" text-anchor=\"middle\" font-size=\"9\" fill=\"#9aa4b2\" font-family=\"Arial\">START</text><text x=\"237\" y=\"137\" text-anchor=\"middle\" font-size=\"9\" fill=\"#9aa4b2\" font-family=\"Arial\">END</text></svg>"
+        },
+        {
+          "key": "revlunge",
+          "name": "Dumbbell Reverse Lunge",
+          "cue": "Step back, drop the rear knee, drive up",
+          "sets": "3",
+          "reps": "8 / leg",
+          "restSeconds": 90,
+          "restLabel": "90 s",
+          "weight": "10 kg ea",
+          "demoUrl": "https://musclewiki.com/exercise/dumbbell-reverse-lunge",
+          "illustrationSvg": "<svg viewBox=\"0 0 312 142\" width=\"150\" height=\"68\"><g transform=\"translate(0,0)\"><line x1=\"8\" y1=\"120\" x2=\"142\" y2=\"120\" stroke=\"#c4ccd6\" stroke-width=\"3\" stroke-linecap=\"round\"/><line x1=\"68\" y1=\"120\" x2=\"72\" y2=\"86\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><line x1=\"76\" y1=\"120\" x2=\"72\" y2=\"86\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><line x1=\"72\" y1=\"86\" x2=\"72\" y2=\"52\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><circle cx=\"72\" cy=\"42\" r=\"7\" fill=\"#1f2a3a\"/><line x1=\"72\" y1=\"56\" x2=\"62\" y2=\"84\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><circle cx=\"62\" cy=\"83\" r=\"4.4\" fill=\"#c0392b\"/><circle cx=\"62\" cy=\"93\" r=\"4.4\" fill=\"#c0392b\"/><line x1=\"62\" y1=\"83\" x2=\"62\" y2=\"93\" stroke=\"#c0392b\" stroke-width=\"3\"/><line x1=\"72\" y1=\"56\" x2=\"82\" y2=\"84\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><circle cx=\"82\" cy=\"83\" r=\"4.4\" fill=\"#c0392b\"/><circle cx=\"82\" cy=\"93\" r=\"4.4\" fill=\"#c0392b\"/><line x1=\"82\" y1=\"83\" x2=\"82\" y2=\"93\" stroke=\"#c0392b\" stroke-width=\"3\"/></g><g transform=\"translate(162,0)\"><line x1=\"8\" y1=\"120\" x2=\"142\" y2=\"120\" stroke=\"#c4ccd6\" stroke-width=\"3\" stroke-linecap=\"round\"/><line x1=\"56\" y1=\"120\" x2=\"60\" y2=\"96\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><line x1=\"60\" y1=\"96\" x2=\"74\" y2=\"88\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><line x1=\"74\" y1=\"88\" x2=\"96\" y2=\"104\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><line x1=\"96\" y1=\"104\" x2=\"108\" y2=\"120\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><line x1=\"74\" y1=\"88\" x2=\"74\" y2=\"52\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><circle cx=\"74\" cy=\"42\" r=\"7\" fill=\"#1f2a3a\"/><line x1=\"74\" y1=\"56\" x2=\"64\" y2=\"84\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><circle cx=\"64\" cy=\"83\" r=\"4.4\" fill=\"#c0392b\"/><circle cx=\"64\" cy=\"93\" r=\"4.4\" fill=\"#c0392b\"/><line x1=\"64\" y1=\"83\" x2=\"64\" y2=\"93\" stroke=\"#c0392b\" stroke-width=\"3\"/><line x1=\"74\" y1=\"56\" x2=\"84\" y2=\"84\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><circle cx=\"84\" cy=\"83\" r=\"4.4\" fill=\"#c0392b\"/><circle cx=\"84\" cy=\"93\" r=\"4.4\" fill=\"#c0392b\"/><line x1=\"84\" y1=\"83\" x2=\"84\" y2=\"93\" stroke=\"#c0392b\" stroke-width=\"3\"/></g><line x1=\"146\" y1=\"64\" x2=\"164\" y2=\"64\" stroke=\"#c0392b\" stroke-width=\"3.6\" stroke-linecap=\"round\"/><line x1=\"164\" y1=\"64\" x2=\"158\" y2=\"60\" stroke=\"#c0392b\" stroke-width=\"3.6\" stroke-linecap=\"round\"/><line x1=\"164\" y1=\"64\" x2=\"158\" y2=\"68\" stroke=\"#c0392b\" stroke-width=\"3.6\" stroke-linecap=\"round\"/><text x=\"75\" y=\"137\" text-anchor=\"middle\" font-size=\"9\" fill=\"#9aa4b2\" font-family=\"Arial\">START</text><text x=\"237\" y=\"137\" text-anchor=\"middle\" font-size=\"9\" fill=\"#9aa4b2\" font-family=\"Arial\">END</text></svg>"
+        },
+        {
+          "key": "hipthrust",
+          "name": "Dumbbell Hip Thrust",
+          "cue": "Shoulders on bench, drive hips to lockout",
+          "sets": "3",
+          "reps": "10",
+          "restSeconds": 90,
+          "restLabel": "90 s",
+          "weight": "20 kg",
+          "demoUrl": "https://musclewiki.com/exercise/dumbbell-hip-thrust",
+          "illustrationSvg": "<svg viewBox=\"0 0 312 142\" width=\"150\" height=\"68\"><g transform=\"translate(0,0)\"><line x1=\"8\" y1=\"120\" x2=\"142\" y2=\"120\" stroke=\"#c4ccd6\" stroke-width=\"3\" stroke-linecap=\"round\"/><rect x=\"30\" y=\"68\" width=\"34\" height=\"7\" rx=\"2\" fill=\"#8a94a3\"/><line x1=\"36\" y1=\"75\" x2=\"36\" y2=\"89\" stroke=\"#8a94a3\" stroke-width=\"3\"/><line x1=\"58\" y1=\"75\" x2=\"58\" y2=\"89\" stroke=\"#8a94a3\" stroke-width=\"3\"/><line x1=\"96\" y1=\"120\" x2=\"96\" y2=\"100\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><line x1=\"96\" y1=\"100\" x2=\"72\" y2=\"104\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><line x1=\"72\" y1=\"104\" x2=\"40\" y2=\"74\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><circle cx=\"34\" cy=\"72\" r=\"7\" fill=\"#1f2a3a\"/><circle cx=\"70\" cy=\"95\" r=\"4.4\" fill=\"#c0392b\"/><circle cx=\"70\" cy=\"105\" r=\"4.4\" fill=\"#c0392b\"/><line x1=\"70\" y1=\"95\" x2=\"70\" y2=\"105\" stroke=\"#c0392b\" stroke-width=\"3\"/></g><g transform=\"translate(162,0)\"><line x1=\"8\" y1=\"120\" x2=\"142\" y2=\"120\" stroke=\"#c4ccd6\" stroke-width=\"3\" stroke-linecap=\"round\"/><rect x=\"30\" y=\"68\" width=\"34\" height=\"7\" rx=\"2\" fill=\"#8a94a3\"/><line x1=\"36\" y1=\"75\" x2=\"36\" y2=\"89\" stroke=\"#8a94a3\" stroke-width=\"3\"/><line x1=\"58\" y1=\"75\" x2=\"58\" y2=\"89\" stroke=\"#8a94a3\" stroke-width=\"3\"/><line x1=\"96\" y1=\"120\" x2=\"96\" y2=\"92\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><line x1=\"96\" y1=\"92\" x2=\"66\" y2=\"90\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><line x1=\"66\" y1=\"90\" x2=\"40\" y2=\"74\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><circle cx=\"34\" cy=\"72\" r=\"7\" fill=\"#1f2a3a\"/><circle cx=\"66\" cy=\"79\" r=\"4.4\" fill=\"#c0392b\"/><circle cx=\"66\" cy=\"89\" r=\"4.4\" fill=\"#c0392b\"/><line x1=\"66\" y1=\"79\" x2=\"66\" y2=\"89\" stroke=\"#c0392b\" stroke-width=\"3\"/></g><line x1=\"146\" y1=\"64\" x2=\"164\" y2=\"64\" stroke=\"#c0392b\" stroke-width=\"3.6\" stroke-linecap=\"round\"/><line x1=\"164\" y1=\"64\" x2=\"158\" y2=\"60\" stroke=\"#c0392b\" stroke-width=\"3.6\" stroke-linecap=\"round\"/><line x1=\"164\" y1=\"64\" x2=\"158\" y2=\"68\" stroke=\"#c0392b\" stroke-width=\"3.6\" stroke-linecap=\"round\"/><text x=\"75\" y=\"137\" text-anchor=\"middle\" font-size=\"9\" fill=\"#9aa4b2\" font-family=\"Arial\">START</text><text x=\"237\" y=\"137\" text-anchor=\"middle\" font-size=\"9\" fill=\"#9aa4b2\" font-family=\"Arial\">END</text></svg>"
+        },
+        {
+          "key": "calf",
+          "name": "Standing Calf Raise",
+          "cue": "Dumbbell in hand, full stretch & squeeze",
+          "sets": "3",
+          "reps": "12",
+          "restSeconds": 60,
+          "restLabel": "60 s",
+          "weight": "20 kg",
+          "demoUrl": "https://musclewiki.com/exercise/dumbbell-calf-raise",
+          "illustrationSvg": "<svg viewBox=\"0 0 312 142\" width=\"150\" height=\"68\"><g transform=\"translate(0,0)\"><line x1=\"8\" y1=\"120\" x2=\"142\" y2=\"120\" stroke=\"#c4ccd6\" stroke-width=\"3\" stroke-linecap=\"round\"/><line x1=\"66\" y1=\"120\" x2=\"72\" y2=\"90\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><line x1=\"78\" y1=\"120\" x2=\"72\" y2=\"90\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><line x1=\"72\" y1=\"90\" x2=\"72\" y2=\"54\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><circle cx=\"72\" cy=\"44\" r=\"7\" fill=\"#1f2a3a\"/><line x1=\"72\" y1=\"58\" x2=\"84\" y2=\"84\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><circle cx=\"86\" cy=\"83\" r=\"4.4\" fill=\"#c0392b\"/><circle cx=\"86\" cy=\"93\" r=\"4.4\" fill=\"#c0392b\"/><line x1=\"86\" y1=\"83\" x2=\"86\" y2=\"93\" stroke=\"#c0392b\" stroke-width=\"3\"/></g><g transform=\"translate(162,0)\"><line x1=\"8\" y1=\"120\" x2=\"142\" y2=\"120\" stroke=\"#c4ccd6\" stroke-width=\"3\" stroke-linecap=\"round\"/><line x1=\"68\" y1=\"120\" x2=\"72\" y2=\"84\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><line x1=\"76\" y1=\"120\" x2=\"72\" y2=\"84\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><line x1=\"72\" y1=\"84\" x2=\"72\" y2=\"48\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><circle cx=\"72\" cy=\"38\" r=\"7\" fill=\"#1f2a3a\"/><line x1=\"72\" y1=\"52\" x2=\"84\" y2=\"78\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><circle cx=\"86\" cy=\"77\" r=\"4.4\" fill=\"#c0392b\"/><circle cx=\"86\" cy=\"87\" r=\"4.4\" fill=\"#c0392b\"/><line x1=\"86\" y1=\"77\" x2=\"86\" y2=\"87\" stroke=\"#c0392b\" stroke-width=\"3\"/></g><line x1=\"146\" y1=\"64\" x2=\"164\" y2=\"64\" stroke=\"#c0392b\" stroke-width=\"3.6\" stroke-linecap=\"round\"/><line x1=\"164\" y1=\"64\" x2=\"158\" y2=\"60\" stroke=\"#c0392b\" stroke-width=\"3.6\" stroke-linecap=\"round\"/><line x1=\"164\" y1=\"64\" x2=\"158\" y2=\"68\" stroke=\"#c0392b\" stroke-width=\"3.6\" stroke-linecap=\"round\"/><text x=\"75\" y=\"137\" text-anchor=\"middle\" font-size=\"9\" fill=\"#9aa4b2\" font-family=\"Arial\">START</text><text x=\"237\" y=\"137\" text-anchor=\"middle\" font-size=\"9\" fill=\"#9aa4b2\" font-family=\"Arial\">END</text></svg>"
+        },
+        {
+          "key": "kneeraise",
+          "name": "Hanging Knee Raise",
+          "cue": "Hang from the bar, curl knees to chest",
+          "sets": "3",
+          "reps": "12",
+          "restSeconds": 45,
+          "restLabel": "45 s",
+          "weight": "Body wt",
+          "demoUrl": "https://musclewiki.com/exercise/hanging-knee-raises",
+          "illustrationSvg": "<svg viewBox=\"0 0 312 142\" width=\"150\" height=\"68\"><g transform=\"translate(0,0)\"><line x1=\"8\" y1=\"120\" x2=\"142\" y2=\"120\" stroke=\"#c4ccd6\" stroke-width=\"3\" stroke-linecap=\"round\"/><line x1=\"41\" y1=\"22\" x2=\"109\" y2=\"22\" stroke=\"#8a94a3\" stroke-width=\"4\"/><line x1=\"46\" y1=\"8\" x2=\"46\" y2=\"22\" stroke=\"#8a94a3\" stroke-width=\"3\"/><line x1=\"104\" y1=\"8\" x2=\"104\" y2=\"22\" stroke=\"#8a94a3\" stroke-width=\"3\"/><polyline points=\"70,24 74,50\" fill=\"none\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><polyline points=\"80,24 76,50\" fill=\"none\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><circle cx=\"75\" cy=\"54\" r=\"7\" fill=\"#1f2a3a\"/><line x1=\"75\" y1=\"58\" x2=\"75\" y2=\"86\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><line x1=\"75\" y1=\"86\" x2=\"74\" y2=\"112\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><line x1=\"75\" y1=\"86\" x2=\"76\" y2=\"112\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/></g><g transform=\"translate(162,0)\"><line x1=\"8\" y1=\"120\" x2=\"142\" y2=\"120\" stroke=\"#c4ccd6\" stroke-width=\"3\" stroke-linecap=\"round\"/><line x1=\"41\" y1=\"22\" x2=\"109\" y2=\"22\" stroke=\"#8a94a3\" stroke-width=\"4\"/><line x1=\"46\" y1=\"8\" x2=\"46\" y2=\"22\" stroke=\"#8a94a3\" stroke-width=\"3\"/><line x1=\"104\" y1=\"8\" x2=\"104\" y2=\"22\" stroke=\"#8a94a3\" stroke-width=\"3\"/><polyline points=\"70,24 74,50\" fill=\"none\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><polyline points=\"80,24 76,50\" fill=\"none\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><circle cx=\"75\" cy=\"54\" r=\"7\" fill=\"#1f2a3a\"/><line x1=\"75\" y1=\"58\" x2=\"75\" y2=\"80\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><polyline points=\"75,80 92,80 90,94\" fill=\"none\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></g><line x1=\"146\" y1=\"64\" x2=\"164\" y2=\"64\" stroke=\"#c0392b\" stroke-width=\"3.6\" stroke-linecap=\"round\"/><line x1=\"164\" y1=\"64\" x2=\"158\" y2=\"60\" stroke=\"#c0392b\" stroke-width=\"3.6\" stroke-linecap=\"round\"/><line x1=\"164\" y1=\"64\" x2=\"158\" y2=\"68\" stroke=\"#c0392b\" stroke-width=\"3.6\" stroke-linecap=\"round\"/><text x=\"75\" y=\"137\" text-anchor=\"middle\" font-size=\"9\" fill=\"#9aa4b2\" font-family=\"Arial\">START</text><text x=\"237\" y=\"137\" text-anchor=\"middle\" font-size=\"9\" fill=\"#9aa4b2\" font-family=\"Arial\">END</text></svg>"
+        }
+      ]
+    },
+    {
+      "day": 4,
+      "name": "Full Body",
+      "focus": "Optional extra session",
+      "optional": true,
+      "estimatedMinutes": 55,
+      "warmup": {
+        "guidance": "Do these in order — high knees to raise your heart rate, then the drills to prime the pattern. Ramp up your first heavy lift — e.g. empty bar ×8, ~60% ×5, ~80% ×3, ~90% ×1–2, then your working sets. The day’s second main lift gets 1–2 light feeler sets; accessories need none.",
+        "exercises": [
+          {
+            "key": "highknees",
+            "name": "High Knees",
+            "cue": "Jog on the spot, drive knees up",
+            "sets": "—",
+            "reps": "2–3 min",
+            "demoUrl": "https://musclewiki.com/exercise/cardio-knee-taps",
+            "illustrationSvg": "<svg viewBox=\"0 0 150 132\" width=\"92\" height=\"80\"><line x1=\"8\" y1=\"120\" x2=\"142\" y2=\"120\" stroke=\"#c4ccd6\" stroke-width=\"3\" stroke-linecap=\"round\"/><line x1=\"78\" y1=\"118\" x2=\"78\" y2=\"96\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><line x1=\"78\" y1=\"96\" x2=\"76\" y2=\"74\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><line x1=\"76\" y1=\"74\" x2=\"62\" y2=\"72\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><line x1=\"62\" y1=\"72\" x2=\"64\" y2=\"86\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><line x1=\"76\" y1=\"74\" x2=\"76\" y2=\"50\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><circle cx=\"76\" cy=\"42\" r=\"7\" fill=\"#1f2a3a\"/><polyline points=\"76,54 66,56 66,48\" fill=\"none\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><polyline points=\"76,54 86,58 86,66\" fill=\"none\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>"
+          },
+          {
+            "key": "bwsquat",
+            "name": "Bodyweight Squat",
+            "cue": "Full depth, controlled",
+            "sets": "2",
+            "reps": "10",
+            "demoUrl": "https://musclewiki.com/exercise/bodyweight-squat",
+            "illustrationSvg": "<svg viewBox=\"0 0 150 132\" width=\"92\" height=\"80\"><line x1=\"8\" y1=\"120\" x2=\"142\" y2=\"120\" stroke=\"#c4ccd6\" stroke-width=\"3\" stroke-linecap=\"round\"/><polyline points=\"88,120 84,86 64,80\" fill=\"none\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><line x1=\"64\" y1=\"80\" x2=\"60\" y2=\"52\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><circle cx=\"58\" cy=\"42\" r=\"7\" fill=\"#1f2a3a\"/><line x1=\"60\" y1=\"56\" x2=\"84\" y2=\"54\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/></svg>"
+          },
+          {
+            "key": "bandpull",
+            "name": "Band Pull-Apart",
+            "cue": "Arms straight, pull to chest",
+            "sets": "2",
+            "reps": "15",
+            "demoUrl": "https://musclewiki.com/exercise/band-pull-apart",
+            "illustrationSvg": "<svg viewBox=\"0 0 150 132\" width=\"92\" height=\"80\"><line x1=\"8\" y1=\"120\" x2=\"142\" y2=\"120\" stroke=\"#c4ccd6\" stroke-width=\"3\" stroke-linecap=\"round\"/><line x1=\"66\" y1=\"120\" x2=\"72\" y2=\"86\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><line x1=\"78\" y1=\"120\" x2=\"72\" y2=\"86\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><line x1=\"72\" y1=\"86\" x2=\"72\" y2=\"52\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><circle cx=\"72\" cy=\"42\" r=\"7\" fill=\"#1f2a3a\"/><line x1=\"72\" y1=\"58\" x2=\"50\" y2=\"58\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><line x1=\"72\" y1=\"58\" x2=\"94\" y2=\"58\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><path d=\"M 50 58 L 94 58\" fill=\"none\" stroke=\"#e08a1e\" stroke-width=\"3\" stroke-dasharray=\"1.5 3.5\" stroke-linecap=\"round\"/></svg>"
+          },
+          {
+            "key": "armcircle",
+            "name": "Arm Circles",
+            "cue": "Small-to-big, both directions",
+            "sets": "2",
+            "reps": "20 ea",
+            "demoUrl": "https://musclewiki.com/exercise/forward-arm-circle",
+            "illustrationSvg": "<svg viewBox=\"0 0 150 132\" width=\"92\" height=\"80\"><line x1=\"8\" y1=\"120\" x2=\"142\" y2=\"120\" stroke=\"#c4ccd6\" stroke-width=\"3\" stroke-linecap=\"round\"/><line x1=\"66\" y1=\"120\" x2=\"72\" y2=\"86\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><line x1=\"78\" y1=\"120\" x2=\"72\" y2=\"86\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><line x1=\"72\" y1=\"86\" x2=\"72\" y2=\"54\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><circle cx=\"72\" cy=\"44\" r=\"7\" fill=\"#1f2a3a\"/><line x1=\"72\" y1=\"58\" x2=\"98\" y2=\"52\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><path d=\"M 104 46 a 9 9 0 1 0 8 4\" fill=\"none\" stroke=\"#1f2a3a\" stroke-width=\"2\"/><line x1=\"112\" y1=\"50\" x2=\"108\" y2=\"49\" stroke=\"#1f2a3a\" stroke-width=\"2\" stroke-linecap=\"round\"/><line x1=\"112\" y1=\"50\" x2=\"111\" y2=\"55\" stroke=\"#1f2a3a\" stroke-width=\"2\" stroke-linecap=\"round\"/></svg>"
+          }
+        ]
+      },
+      "exercises": [
+        {
+          "key": "goblet",
+          "name": "Dumbbell Goblet Squat",
+          "cue": "Hold a DB at the chest, sit tall",
+          "sets": "3",
+          "reps": "8",
+          "restSeconds": 120,
+          "restLabel": "2 min",
+          "weight": "20 kg",
+          "demoUrl": "https://musclewiki.com/exercise/dumbbell-goblet-squat",
+          "illustrationSvg": "<svg viewBox=\"0 0 312 142\" width=\"150\" height=\"68\"><g transform=\"translate(0,0)\"><line x1=\"8\" y1=\"120\" x2=\"142\" y2=\"120\" stroke=\"#c4ccd6\" stroke-width=\"3\" stroke-linecap=\"round\"/><line x1=\"72\" y1=\"120\" x2=\"72\" y2=\"94\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><line x1=\"72\" y1=\"94\" x2=\"72\" y2=\"78\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><line x1=\"72\" y1=\"78\" x2=\"66\" y2=\"52\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><circle cx=\"60\" cy=\"44\" r=\"7\" fill=\"#1f2a3a\"/><circle cx=\"70\" cy=\"53\" r=\"4.4\" fill=\"#c0392b\"/><circle cx=\"70\" cy=\"63\" r=\"4.4\" fill=\"#c0392b\"/><line x1=\"70\" y1=\"53\" x2=\"70\" y2=\"63\" stroke=\"#c0392b\" stroke-width=\"3\"/></g><g transform=\"translate(162,0)\"><line x1=\"8\" y1=\"120\" x2=\"142\" y2=\"120\" stroke=\"#c4ccd6\" stroke-width=\"3\" stroke-linecap=\"round\"/><line x1=\"72\" y1=\"120\" x2=\"86\" y2=\"100\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><line x1=\"86\" y1=\"100\" x2=\"60\" y2=\"96\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><line x1=\"60\" y1=\"96\" x2=\"54\" y2=\"64\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><circle cx=\"48\" cy=\"56\" r=\"7\" fill=\"#1f2a3a\"/><circle cx=\"58\" cy=\"65\" r=\"4.4\" fill=\"#c0392b\"/><circle cx=\"58\" cy=\"75\" r=\"4.4\" fill=\"#c0392b\"/><line x1=\"58\" y1=\"65\" x2=\"58\" y2=\"75\" stroke=\"#c0392b\" stroke-width=\"3\"/></g><line x1=\"146\" y1=\"64\" x2=\"164\" y2=\"64\" stroke=\"#c0392b\" stroke-width=\"3.6\" stroke-linecap=\"round\"/><line x1=\"164\" y1=\"64\" x2=\"158\" y2=\"60\" stroke=\"#c0392b\" stroke-width=\"3.6\" stroke-linecap=\"round\"/><line x1=\"164\" y1=\"64\" x2=\"158\" y2=\"68\" stroke=\"#c0392b\" stroke-width=\"3.6\" stroke-linecap=\"round\"/><text x=\"75\" y=\"137\" text-anchor=\"middle\" font-size=\"9\" fill=\"#9aa4b2\" font-family=\"Arial\">START</text><text x=\"237\" y=\"137\" text-anchor=\"middle\" font-size=\"9\" fill=\"#9aa4b2\" font-family=\"Arial\">END</text></svg>"
+        },
+        {
+          "key": "dbrdl",
+          "name": "Dumbbell Romanian Deadlift",
+          "cue": "Hinge, flat back, light-to-moderate load",
+          "sets": "3",
+          "reps": "8",
+          "restSeconds": 120,
+          "restLabel": "2 min",
+          "weight": "20 kg ea",
+          "demoUrl": "https://musclewiki.com/exercise/dumbbell-romanian-deadlift",
+          "illustrationSvg": "<svg viewBox=\"0 0 312 142\" width=\"150\" height=\"68\"><g transform=\"translate(0,0)\"><line x1=\"8\" y1=\"120\" x2=\"142\" y2=\"120\" stroke=\"#c4ccd6\" stroke-width=\"3\" stroke-linecap=\"round\"/><line x1=\"72\" y1=\"120\" x2=\"72\" y2=\"94\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><line x1=\"72\" y1=\"94\" x2=\"72\" y2=\"80\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><line x1=\"72\" y1=\"80\" x2=\"72\" y2=\"50\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><circle cx=\"72\" cy=\"40\" r=\"7\" fill=\"#1f2a3a\"/><line x1=\"72\" y1=\"56\" x2=\"66\" y2=\"84\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><circle cx=\"66\" cy=\"83\" r=\"4.4\" fill=\"#c0392b\"/><circle cx=\"66\" cy=\"93\" r=\"4.4\" fill=\"#c0392b\"/><line x1=\"66\" y1=\"83\" x2=\"66\" y2=\"93\" stroke=\"#c0392b\" stroke-width=\"3\"/><line x1=\"72\" y1=\"56\" x2=\"78\" y2=\"84\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><circle cx=\"78\" cy=\"83\" r=\"4.4\" fill=\"#c0392b\"/><circle cx=\"78\" cy=\"93\" r=\"4.4\" fill=\"#c0392b\"/><line x1=\"78\" y1=\"83\" x2=\"78\" y2=\"93\" stroke=\"#c0392b\" stroke-width=\"3\"/></g><g transform=\"translate(162,0)\"><line x1=\"8\" y1=\"120\" x2=\"142\" y2=\"120\" stroke=\"#c4ccd6\" stroke-width=\"3\" stroke-linecap=\"round\"/><line x1=\"70\" y1=\"120\" x2=\"74\" y2=\"84\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><line x1=\"74\" y1=\"84\" x2=\"70\" y2=\"78\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><line x1=\"70\" y1=\"78\" x2=\"44\" y2=\"58\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><circle cx=\"38\" cy=\"54\" r=\"7\" fill=\"#1f2a3a\"/><line x1=\"46\" y1=\"60\" x2=\"50\" y2=\"88\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><circle cx=\"50\" cy=\"87\" r=\"4.4\" fill=\"#c0392b\"/><circle cx=\"50\" cy=\"97\" r=\"4.4\" fill=\"#c0392b\"/><line x1=\"50\" y1=\"87\" x2=\"50\" y2=\"97\" stroke=\"#c0392b\" stroke-width=\"3\"/><line x1=\"46\" y1=\"60\" x2=\"44\" y2=\"88\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><circle cx=\"44\" cy=\"87\" r=\"4.4\" fill=\"#c0392b\"/><circle cx=\"44\" cy=\"97\" r=\"4.4\" fill=\"#c0392b\"/><line x1=\"44\" y1=\"87\" x2=\"44\" y2=\"97\" stroke=\"#c0392b\" stroke-width=\"3\"/></g><line x1=\"146\" y1=\"64\" x2=\"164\" y2=\"64\" stroke=\"#c0392b\" stroke-width=\"3.6\" stroke-linecap=\"round\"/><line x1=\"164\" y1=\"64\" x2=\"158\" y2=\"60\" stroke=\"#c0392b\" stroke-width=\"3.6\" stroke-linecap=\"round\"/><line x1=\"164\" y1=\"64\" x2=\"158\" y2=\"68\" stroke=\"#c0392b\" stroke-width=\"3.6\" stroke-linecap=\"round\"/><text x=\"75\" y=\"137\" text-anchor=\"middle\" font-size=\"9\" fill=\"#9aa4b2\" font-family=\"Arial\">START</text><text x=\"237\" y=\"137\" text-anchor=\"middle\" font-size=\"9\" fill=\"#9aa4b2\" font-family=\"Arial\">END</text></svg>"
+        },
+        {
+          "key": "dbpress",
+          "name": "Standing Neutral-Grip DB Press",
+          "cue": "Palms facing in, press overhead",
+          "sets": "3",
+          "reps": "8",
+          "restSeconds": 120,
+          "restLabel": "2 min",
+          "weight": "10 kg ea",
+          "demoUrl": "https://musclewiki.com/exercise/dumbbell-neutral-overhead-press",
+          "illustrationSvg": "<svg viewBox=\"0 0 312 142\" width=\"150\" height=\"68\"><g transform=\"translate(0,0)\"><line x1=\"8\" y1=\"120\" x2=\"142\" y2=\"120\" stroke=\"#c4ccd6\" stroke-width=\"3\" stroke-linecap=\"round\"/><line x1=\"66\" y1=\"120\" x2=\"72\" y2=\"88\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><line x1=\"78\" y1=\"120\" x2=\"72\" y2=\"88\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><line x1=\"72\" y1=\"88\" x2=\"72\" y2=\"56\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><circle cx=\"72\" cy=\"46\" r=\"7\" fill=\"#1f2a3a\"/><line x1=\"72\" y1=\"58\" x2=\"64\" y2=\"58\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><circle cx=\"62\" cy=\"53\" r=\"4.4\" fill=\"#c0392b\"/><circle cx=\"62\" cy=\"63\" r=\"4.4\" fill=\"#c0392b\"/><line x1=\"62\" y1=\"53\" x2=\"62\" y2=\"63\" stroke=\"#c0392b\" stroke-width=\"3\"/><line x1=\"72\" y1=\"58\" x2=\"80\" y2=\"58\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><circle cx=\"82\" cy=\"53\" r=\"4.4\" fill=\"#c0392b\"/><circle cx=\"82\" cy=\"63\" r=\"4.4\" fill=\"#c0392b\"/><line x1=\"82\" y1=\"53\" x2=\"82\" y2=\"63\" stroke=\"#c0392b\" stroke-width=\"3\"/></g><g transform=\"translate(162,0)\"><line x1=\"8\" y1=\"120\" x2=\"142\" y2=\"120\" stroke=\"#c4ccd6\" stroke-width=\"3\" stroke-linecap=\"round\"/><line x1=\"66\" y1=\"120\" x2=\"72\" y2=\"88\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><line x1=\"78\" y1=\"120\" x2=\"72\" y2=\"88\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><line x1=\"72\" y1=\"88\" x2=\"72\" y2=\"56\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><circle cx=\"72\" cy=\"46\" r=\"7\" fill=\"#1f2a3a\"/><line x1=\"72\" y1=\"58\" x2=\"66\" y2=\"44\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><circle cx=\"64\" cy=\"35\" r=\"4.4\" fill=\"#c0392b\"/><circle cx=\"64\" cy=\"45\" r=\"4.4\" fill=\"#c0392b\"/><line x1=\"64\" y1=\"35\" x2=\"64\" y2=\"45\" stroke=\"#c0392b\" stroke-width=\"3\"/><line x1=\"72\" y1=\"58\" x2=\"78\" y2=\"44\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><circle cx=\"80\" cy=\"35\" r=\"4.4\" fill=\"#c0392b\"/><circle cx=\"80\" cy=\"45\" r=\"4.4\" fill=\"#c0392b\"/><line x1=\"80\" y1=\"35\" x2=\"80\" y2=\"45\" stroke=\"#c0392b\" stroke-width=\"3\"/></g><line x1=\"146\" y1=\"64\" x2=\"164\" y2=\"64\" stroke=\"#c0392b\" stroke-width=\"3.6\" stroke-linecap=\"round\"/><line x1=\"164\" y1=\"64\" x2=\"158\" y2=\"60\" stroke=\"#c0392b\" stroke-width=\"3.6\" stroke-linecap=\"round\"/><line x1=\"164\" y1=\"64\" x2=\"158\" y2=\"68\" stroke=\"#c0392b\" stroke-width=\"3.6\" stroke-linecap=\"round\"/><text x=\"75\" y=\"137\" text-anchor=\"middle\" font-size=\"9\" fill=\"#9aa4b2\" font-family=\"Arial\">START</text><text x=\"237\" y=\"137\" text-anchor=\"middle\" font-size=\"9\" fill=\"#9aa4b2\" font-family=\"Arial\">END</text></svg>"
+        },
+        {
+          "key": "csrow",
+          "name": "DB Chest-Supported Row",
+          "cue": "Face-down on incline, row to hips",
+          "sets": "3",
+          "reps": "10",
+          "restSeconds": 90,
+          "restLabel": "90 s",
+          "weight": "15 kg ea",
+          "demoUrl": "https://musclewiki.com/exercise/dumbbell-laying-incline-row",
+          "illustrationSvg": "<svg viewBox=\"0 0 312 142\" width=\"150\" height=\"68\"><g transform=\"translate(0,0)\"><line x1=\"8\" y1=\"120\" x2=\"142\" y2=\"120\" stroke=\"#c4ccd6\" stroke-width=\"3\" stroke-linecap=\"round\"/><path d=\"M 46 112 L 104 74\" stroke=\"#8a94a3\" stroke-width=\"8\" stroke-linecap=\"round\"/><line x1=\"56\" y1=\"104\" x2=\"100\" y2=\"76\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><circle cx=\"104\" cy=\"72\" r=\"7\" fill=\"#1f2a3a\"/><line x1=\"80\" y1=\"90\" x2=\"82\" y2=\"104\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><circle cx=\"82\" cy=\"103\" r=\"4.4\" fill=\"#c0392b\"/><circle cx=\"82\" cy=\"113\" r=\"4.4\" fill=\"#c0392b\"/><line x1=\"82\" y1=\"103\" x2=\"82\" y2=\"113\" stroke=\"#c0392b\" stroke-width=\"3\"/><line x1=\"90\" y1=\"84\" x2=\"92\" y2=\"98\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><circle cx=\"92\" cy=\"97\" r=\"4.4\" fill=\"#c0392b\"/><circle cx=\"92\" cy=\"107\" r=\"4.4\" fill=\"#c0392b\"/><line x1=\"92\" y1=\"97\" x2=\"92\" y2=\"107\" stroke=\"#c0392b\" stroke-width=\"3\"/></g><g transform=\"translate(162,0)\"><line x1=\"8\" y1=\"120\" x2=\"142\" y2=\"120\" stroke=\"#c4ccd6\" stroke-width=\"3\" stroke-linecap=\"round\"/><path d=\"M 46 112 L 104 74\" stroke=\"#8a94a3\" stroke-width=\"8\" stroke-linecap=\"round\"/><line x1=\"56\" y1=\"104\" x2=\"100\" y2=\"76\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><circle cx=\"104\" cy=\"72\" r=\"7\" fill=\"#1f2a3a\"/><line x1=\"80\" y1=\"90\" x2=\"76\" y2=\"100\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><circle cx=\"74\" cy=\"97\" r=\"4.4\" fill=\"#c0392b\"/><circle cx=\"74\" cy=\"107\" r=\"4.4\" fill=\"#c0392b\"/><line x1=\"74\" y1=\"97\" x2=\"74\" y2=\"107\" stroke=\"#c0392b\" stroke-width=\"3\"/><line x1=\"90\" y1=\"84\" x2=\"86\" y2=\"94\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><circle cx=\"84\" cy=\"91\" r=\"4.4\" fill=\"#c0392b\"/><circle cx=\"84\" cy=\"101\" r=\"4.4\" fill=\"#c0392b\"/><line x1=\"84\" y1=\"91\" x2=\"84\" y2=\"101\" stroke=\"#c0392b\" stroke-width=\"3\"/></g><line x1=\"146\" y1=\"64\" x2=\"164\" y2=\"64\" stroke=\"#c0392b\" stroke-width=\"3.6\" stroke-linecap=\"round\"/><line x1=\"164\" y1=\"64\" x2=\"158\" y2=\"60\" stroke=\"#c0392b\" stroke-width=\"3.6\" stroke-linecap=\"round\"/><line x1=\"164\" y1=\"64\" x2=\"158\" y2=\"68\" stroke=\"#c0392b\" stroke-width=\"3.6\" stroke-linecap=\"round\"/><text x=\"75\" y=\"137\" text-anchor=\"middle\" font-size=\"9\" fill=\"#9aa4b2\" font-family=\"Arial\">START</text><text x=\"237\" y=\"137\" text-anchor=\"middle\" font-size=\"9\" fill=\"#9aa4b2\" font-family=\"Arial\">END</text></svg>"
+        },
+        {
+          "key": "curl",
+          "name": "EZ-Bar Bicep Curl",
+          "cue": "Elbows pinned, curl to shoulders",
+          "sets": "3",
+          "reps": "10",
+          "restSeconds": 60,
+          "restLabel": "60 s",
+          "weight": "20 kg",
+          "demoUrl": "https://musclewiki.com/exercise/ez-bar-curl",
+          "illustrationSvg": "<svg viewBox=\"0 0 312 142\" width=\"150\" height=\"68\"><g transform=\"translate(0,0)\"><line x1=\"8\" y1=\"120\" x2=\"142\" y2=\"120\" stroke=\"#c4ccd6\" stroke-width=\"3\" stroke-linecap=\"round\"/><line x1=\"66\" y1=\"120\" x2=\"72\" y2=\"86\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><line x1=\"78\" y1=\"120\" x2=\"72\" y2=\"86\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><line x1=\"72\" y1=\"86\" x2=\"72\" y2=\"52\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><circle cx=\"72\" cy=\"42\" r=\"7\" fill=\"#1f2a3a\"/><line x1=\"72\" y1=\"58\" x2=\"72\" y2=\"80\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><circle cx=\"72\" cy=\"84\" r=\"7\" fill=\"#c0392b\"/><circle cx=\"72\" cy=\"84\" r=\"2.4\" fill=\"#7a1f16\"/></g><g transform=\"translate(162,0)\"><line x1=\"8\" y1=\"120\" x2=\"142\" y2=\"120\" stroke=\"#c4ccd6\" stroke-width=\"3\" stroke-linecap=\"round\"/><line x1=\"66\" y1=\"120\" x2=\"72\" y2=\"86\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><line x1=\"78\" y1=\"120\" x2=\"72\" y2=\"86\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><line x1=\"72\" y1=\"86\" x2=\"72\" y2=\"52\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><circle cx=\"72\" cy=\"42\" r=\"7\" fill=\"#1f2a3a\"/><line x1=\"72\" y1=\"58\" x2=\"74\" y2=\"66\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><circle cx=\"74\" cy=\"62\" r=\"7\" fill=\"#c0392b\"/><circle cx=\"74\" cy=\"62\" r=\"2.4\" fill=\"#7a1f16\"/></g><line x1=\"146\" y1=\"64\" x2=\"164\" y2=\"64\" stroke=\"#c0392b\" stroke-width=\"3.6\" stroke-linecap=\"round\"/><line x1=\"164\" y1=\"64\" x2=\"158\" y2=\"60\" stroke=\"#c0392b\" stroke-width=\"3.6\" stroke-linecap=\"round\"/><line x1=\"164\" y1=\"64\" x2=\"158\" y2=\"68\" stroke=\"#c0392b\" stroke-width=\"3.6\" stroke-linecap=\"round\"/><text x=\"75\" y=\"137\" text-anchor=\"middle\" font-size=\"9\" fill=\"#9aa4b2\" font-family=\"Arial\">START</text><text x=\"237\" y=\"137\" text-anchor=\"middle\" font-size=\"9\" fill=\"#9aa4b2\" font-family=\"Arial\">END</text></svg>"
+        },
+        {
+          "key": "twist",
+          "name": "Med Ball Russian Twist",
+          "cue": "Seated, rotate ball side to side",
+          "sets": "3",
+          "reps": "15 / side",
+          "restSeconds": 45,
+          "restLabel": "45 s",
+          "weight": "5 kg ball",
+          "demoUrl": "https://musclewiki.com/exercise/russian-twist",
+          "illustrationSvg": "<svg viewBox=\"0 0 312 142\" width=\"150\" height=\"68\"><g transform=\"translate(0,0)\"><line x1=\"8\" y1=\"120\" x2=\"142\" y2=\"120\" stroke=\"#c4ccd6\" stroke-width=\"3\" stroke-linecap=\"round\"/><polyline points=\"52,116 70,104 88,110\" fill=\"none\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><line x1=\"88\" y1=\"110\" x2=\"74\" y2=\"84\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><circle cx=\"70\" cy=\"74\" r=\"7\" fill=\"#1f2a3a\"/><line x1=\"80\" y1=\"92\" x2=\"96\" y2=\"92\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><circle cx=\"102\" cy=\"92\" r=\"8\" fill=\"#c0392b\"/></g><g transform=\"translate(162,0)\"><line x1=\"8\" y1=\"120\" x2=\"142\" y2=\"120\" stroke=\"#c4ccd6\" stroke-width=\"3\" stroke-linecap=\"round\"/><polyline points=\"52,116 70,104 88,110\" fill=\"none\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><line x1=\"88\" y1=\"110\" x2=\"74\" y2=\"84\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><circle cx=\"70\" cy=\"74\" r=\"7\" fill=\"#1f2a3a\"/><line x1=\"80\" y1=\"92\" x2=\"64\" y2=\"96\" stroke=\"#1f2a3a\" stroke-width=\"4.4\" stroke-linecap=\"round\"/><circle cx=\"58\" cy=\"96\" r=\"8\" fill=\"#c0392b\"/></g><line x1=\"146\" y1=\"64\" x2=\"164\" y2=\"64\" stroke=\"#c0392b\" stroke-width=\"3.6\" stroke-linecap=\"round\"/><line x1=\"164\" y1=\"64\" x2=\"158\" y2=\"60\" stroke=\"#c0392b\" stroke-width=\"3.6\" stroke-linecap=\"round\"/><line x1=\"164\" y1=\"64\" x2=\"158\" y2=\"68\" stroke=\"#c0392b\" stroke-width=\"3.6\" stroke-linecap=\"round\"/><text x=\"75\" y=\"137\" text-anchor=\"middle\" font-size=\"9\" fill=\"#9aa4b2\" font-family=\"Arial\">START</text><text x=\"237\" y=\"137\" text-anchor=\"middle\" font-size=\"9\" fill=\"#9aa4b2\" font-family=\"Arial\">END</text></svg>"
+        }
+      ]
+    }
+  ]
+}
