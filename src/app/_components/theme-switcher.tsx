@@ -77,14 +77,16 @@ const Switch = () => {
   );
 };
 
-const Script = memo(() => (
-  <script
-    suppressHydrationWarning
-    dangerouslySetInnerHTML={{
-      __html: `(${NoFOUCScript.toString()})('${STORAGE_KEY}')`,
-    }}
-  />
-));
+const Script = memo(function NoFOUCScriptTag() {
+  return (
+    <script
+      suppressHydrationWarning
+      dangerouslySetInnerHTML={{
+        __html: `(${NoFOUCScript.toString()})('${STORAGE_KEY}')`,
+      }}
+    />
+  );
+});
 
 export const ThemeSwitcher = () => {
   return (
