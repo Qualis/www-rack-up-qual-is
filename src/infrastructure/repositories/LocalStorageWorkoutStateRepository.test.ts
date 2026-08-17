@@ -55,7 +55,7 @@ describe("LocalStorageWorkoutStateRepository", () => {
     expect(repository.load().days["1"]?.completedSets["bench"]).toEqual([0, 2]);
   });
 
-  it("should discard stored progress written by an unrecognised schema version", () => {
+  it("should discard stored progress written before the earliest supported schema version", () => {
     storage[WORKOUT_STATE_STORAGE_KEY] = JSON.stringify({
       ...storedState,
       version: 0,
@@ -206,8 +206,15 @@ describe("migrateWorkoutState", () => {
     expect(migrateWorkoutState(null)).toBeNull();
   });
 
-  it("should reject state written by an unrecognised schema version", () => {
-    expect(migrateWorkoutState({ ...storedState, version: 99 })).toBeNull();
+  it("should salvage state written by a newer build rather than wiping it", () => {
+    expect(
+      migrateWorkoutState({ ...storedState, version: 99 })?.days["1"]
+        ?.completedSets["bench"]
+    ).toEqual([0, 2]);
+  });
+
+  it("should reject state whose version is missing entirely", () => {
+    expect(migrateWorkoutState({ days: {}, exercises: {} })).toBeNull();
   });
 
   it("should treat days that are not an object as no recorded days", () => {

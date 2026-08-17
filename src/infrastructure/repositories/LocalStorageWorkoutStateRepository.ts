@@ -5,7 +5,7 @@ import { EMPTY_WORKOUT_STATE, WORKOUT_STATE_VERSION } from "@/lib/workoutState";
 
 export const WORKOUT_STATE_STORAGE_KEY = "rackup-workout-state";
 
-const COMPLETED_SETS_ONLY_VERSION = 1;
+const MINIMUM_SUPPORTED_VERSION = 1;
 
 function isRecord(candidate: unknown): candidate is Record<string, unknown> {
   return typeof candidate === "object" && candidate !== null;
@@ -46,8 +46,6 @@ function isDayState(candidate: unknown): boolean {
   );
 }
 
-const SUPPORTED_VERSIONS = [COMPLETED_SETS_ONLY_VERSION, WORKOUT_STATE_VERSION];
-
 function salvageEntries<T>(
   candidate: unknown,
   isValidEntry: (entry: unknown) => boolean
@@ -66,7 +64,9 @@ export function migrateWorkoutState(candidate: unknown): WorkoutState | null {
     return null;
   }
 
-  if (!SUPPORTED_VERSIONS.includes(candidate["version"] as number)) {
+  const version = candidate["version"];
+
+  if (typeof version !== "number" || version < MINIMUM_SUPPORTED_VERSION) {
     return null;
   }
 
