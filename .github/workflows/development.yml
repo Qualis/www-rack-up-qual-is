@@ -16,7 +16,6 @@ on:
 
 jobs:
   matrix:
-    if: false
     strategy:
       matrix:
         configuration:
@@ -50,7 +49,6 @@ jobs:
           ./push.sh development ${{ matrix.configuration.platform }}
 
   latest:
-    if: false
     runs-on: [ubuntu-latest]
     needs: [matrix]
 
