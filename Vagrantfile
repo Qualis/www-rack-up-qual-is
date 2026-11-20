@@ -17,7 +17,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       docker.image = "svanosselaer/www-rack-up-qual-is-development:latest"
       docker.has_ssh = true
       docker.pull = true
-      docker.ports = ['3003:3000']
+      docker.ports = ['3008:3000']
       docker.volumes = [
         '/var/run/docker.sock:/var/run/docker.sock'
       ]
@@ -29,6 +29,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     end
 
     development.vm.hostname = 'www-rack-up-qual-is-vagrant'
+    development.vm.network :forwarded_port, id: 'ssh', guest: 22, host: 2323, host_ip: '127.0.0.1'
 
     development.vm.provision :ansible do |ansible|
       ansible.playbook = PLAYBOOK
